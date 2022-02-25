@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <color name="colorPrimary">#153F87</color>
-    <color name="colorPrimaryDark">#153F87</color>
+    <color name="colorPrimaryDark">#214D9A</color>
     <color name="colorAccent">#153F87</color>
     <color name="textColor">#323232</color>
-    <color name="textColor2">#828B9A</color>
+    <color name="textColor2">#868A9A</color>
     <color name="icblues">#11074c</color>
+    <color name="grayBg">#F7F7FA</color>
 
-    <color name="appPurple">#2B0C71</color>
+    <color name="appBlueDead">#445C87</color>
     <color name="appYellow">#FFC603</color>
     <color name="appturquoise">#0196AA</color>
     <color name="appPink">#FF097E</color>

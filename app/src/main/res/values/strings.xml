@@ -5,4 +5,6 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="lorem_ipsum_0.1p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra risus at est eleifend venenatis. Duis volutpat fermentum lorem eget convallis. Fusce rutrum tincidunt lorem, in ultrices orci pharetra a. Cras vitae orci sit amet urna tempor dapibus. </string>
 </resources>
