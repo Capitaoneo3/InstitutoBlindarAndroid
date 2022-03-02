@@ -8,7 +8,7 @@
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_top_home_bg"
+        android:background="@drawable/bg_card_category"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,8 +31,8 @@
                 android:id="@+id/icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:tint="@color/colorPrimaryDark"
-                app:srcCompat="@drawable/ic_baseline_balance_24" />
+                app:srcCompat="@drawable/ic_baseline_balance_24"
+                app:tint="@color/colorPrimaryDark" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,7 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button_top_home_bg"
+        android:background="@drawable/bg_card_category"
         android:backgroundTint="@color/colorPrimary"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -149,8 +149,8 @@
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:tint="@color/grayBg"
-                app:srcCompat="@drawable/ic_baseline_punch_clock_24" />
+                app:srcCompat="@drawable/ic_baseline_punch_clock_24"
+                app:tint="@color/grayBg" />
         </LinearLayout>
 
     </LinearLayout>

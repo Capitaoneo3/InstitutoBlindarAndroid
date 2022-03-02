@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/skip_intro_bt2"
         style="@style/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_rounded_filled"
         android:backgroundTint="@color/colorPrimary"
@@ -28,7 +28,7 @@
     <Button
         android:id="@+id/open_call_bt"
         style="@style/button1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_rounded_filled"

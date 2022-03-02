@@ -1,16 +1,12 @@
-package com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls
+package com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.br.app5m.institutoblindarandroid.R
 import com.br.app5m.institutoblindarandroid.helper.ZoomOutPageTransformer
@@ -21,8 +17,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_my_calls.*
 
-
-class MyCallsFrag : Fragment() {
+class DetailCallFrag : Fragment() {
     private lateinit var adapter: FragmentStateAdapter
 
 
@@ -39,7 +34,7 @@ class MyCallsFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_calls, container, false)
+        return inflater.inflate(R.layout.detail_call_fragment, container, false)
     }
 
 
@@ -68,9 +63,9 @@ class MyCallsFrag : Fragment() {
 
             }
         }.attach()
-       /* if (positionVp !=0){
-            mPager.setCurrentItem(1, false)
-        }*/
+        /* if (positionVp !=0){
+             mPager.setCurrentItem(1, false)
+         }*/
     }
 
 
@@ -96,19 +91,19 @@ class MyCallsFrag : Fragment() {
 
     }
 
-  /*  fun dialogshowAtention(message: String) {
-        val dialog = AtentionMessageDialog(message)
+    /*  fun dialogshowAtention(message: String) {
+          val dialog = AtentionMessageDialog(message)
 
-        dialog.setTargetFragment(this, 1)
-        fragmentManager?.let { it1 -> dialog.show(it1, "BadMessageDialog") }
-    }
+          dialog.setTargetFragment(this, 1)
+          fragmentManager?.let { it1 -> dialog.show(it1, "BadMessageDialog") }
+      }
 
-    fun dialogshowRight(message: String) {
-        val dialog = RightMessageDialog(message)
+      fun dialogshowRight(message: String) {
+          val dialog = RightMessageDialog(message)
 
-        dialog.setTargetFragment(this, 1)
-        fragmentManager?.let { it1 -> dialog.show(it1, "BadMessageDialog") }
-    }*/
+          dialog.setTargetFragment(this, 1)
+          fragmentManager?.let { it1 -> dialog.show(it1, "BadMessageDialog") }
+      }*/
 
 
 

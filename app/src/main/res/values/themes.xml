@@ -122,6 +122,7 @@
     <item name="backgroundTint">@color/colorPrimary</item>
 
     <item name="android:minWidth">90dp</item>
+    <item name="android:minHeight">56dp</item>
     <item name="android:textAllCaps">false</item>
     <item name="android:textColor">#FFFFFF</item>
 
@@ -139,6 +140,8 @@
 -
 
 <style name="button2">
+    <item name="android:minHeight">56dp</item>
+
     <item name="rippleColor">@color/colorPrimary</item>
     <item name="backgroundTint">#FFFFFF</item>
     <item name="iconTint">@color/colorPrimary</item>

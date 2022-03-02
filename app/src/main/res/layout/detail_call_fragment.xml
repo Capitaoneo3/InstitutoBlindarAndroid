@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.fragment.main.mycalls.MyCallsFrag">
+        tools:context=".ui.fragment.main.mycalls.detail.DetailCallFrag">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabView"
@@ -13,23 +13,23 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             app:tabIndicatorColor="@color/white"
-            app:tabMode="scrollable"
             app:tabTextColor="@color/white">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pendentes" />
+                android:icon="@drawable/fab_add"
+                android:text="Mensagens" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Em Andamento" />
+                android:text="Áudios" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Finalizados" />
+                android:text="Arquivos" />
 
         </com.google.android.material.tabs.TabLayout>
 

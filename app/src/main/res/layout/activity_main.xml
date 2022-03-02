@@ -49,7 +49,7 @@
             android:id="@+id/main_bottom_navigation_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/nav_bar_bg"
+            android:background="@drawable/bg_nav_bar"
             android:backgroundTint="@color/colorPrimary"
             android:fitsSystemWindows="true"
             app:backgroundTint="@color/colorPrimary"
