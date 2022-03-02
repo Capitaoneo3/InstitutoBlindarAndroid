@@ -1,4 +1,4 @@
-package br.com.app5m.chaveirosmania.ui.fragment.intro
+package com.br.app5m.institutoblindarandroid.ui.fragment.Intro
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
+import br.com.app5m.chaveirosmania.ui.fragment.intro.IntroContainerViewModel
 import com.br.app5m.institutoblindarandroid.R
-import com.br.app5m.institutoblindarandroid.ui.fragment.Intro.Intro1Frag
-import com.br.app5m.institutoblindarandroid.ui.fragment.Intro.Intro2Frag
 import kotlinx.android.synthetic.main.fragment_container_intro.*
 
 
@@ -82,7 +82,7 @@ class IntroContainerFrag : Fragment() {
 
                 } else {
                     savePosition = position
-                    skip_intro_bt.visibility = View.INVISIBLE
+                    skip_intro_bt.visibility = View.VISIBLE
 
                 }
             }
@@ -131,13 +131,8 @@ class IntroContainerFrag : Fragment() {
               pagerView.currentItem++
           }*/
         skip_intro_bt.setOnClickListener {
-           /* IntroHelper.storeInt(requireContext(), IntroHelper.ENTERING_FIRST_TIME, 0)
-            findNavController().navigate(R.id.action_containerIntroFrag_to_containerSiginInFrag)*/
-            /*   activity?.let{
-                   val intent = Intent (it, MainActivity::class.java)
-                   it.startActivity(intent)
-                   it.finishAffinity()
-               }*/
+            findNavController().navigate(R.id.action_introContainerFrag_to_loginFrag)
+
         }
 
     }

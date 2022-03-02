@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <Button
+        android:id="@+id/skip_intro_bt2"
+        style="@style/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded_filled"
+        android:backgroundTint="@color/colorPrimary"
+        android:letterSpacing="0"
+        android:text="Plantão 24h"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_baseline_punch_clock_24"
+        app:iconGravity="end|textStart"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/open_call_bt"
+        style="@style/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_rounded_filled"
+        android:letterSpacing="0"
+        android:text="Abrir Chamado"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_baseline_file_open_24"
+        app:iconGravity="end|textStart"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skip_intro_bt2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

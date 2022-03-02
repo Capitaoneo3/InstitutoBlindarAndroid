@@ -1,6 +1,8 @@
 package com.br.app5m.institutoblindarandroid
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +15,16 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.br.app5m.institutoblindarandroid.databinding.ActivityMainBinding
+
+import android.widget.TextView
+
+
+
+
+var textCartItemCount: TextView? = null
+var mCartItemCount = 10
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,8 +48,44 @@ class MainActivity : AppCompatActivity() {
 
 
         visibilityNavElements(navController) //If you want to hide drawer or bottom navigation configure that in this function
+
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.actionbar_menu_item, menu)
+        val menuItem: MenuItem = menu.findItem(R.id.action_notify)
+        val actionView: View = menuItem.getActionView()
+        textCartItemCount = actionView.findViewById<View>(R.id.cart_badge) as TextView
+        setupBadge()
+        actionView.setOnClickListener { onOptionsItemSelected(menuItem) }
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_notify -> {
+
+                // Do something
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setupBadge() {
+        if (textCartItemCount != null) {
+            if (mCartItemCount == 0) {
+                if (textCartItemCount!!.visibility != View.GONE) {
+                    textCartItemCount!!.visibility = View.GONE
+                }
+            } else {
+                textCartItemCount!!.text = Math.min(mCartItemCount, 99).toString()
+                if (textCartItemCount!!.visibility != View.VISIBLE) {
+                    textCartItemCount!!.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
     private fun visibilityNavElements(navController: NavController) {
 
         //Listen for the change in fragment (navigation) and hide or show drawer or bottom navigation accordingly if required

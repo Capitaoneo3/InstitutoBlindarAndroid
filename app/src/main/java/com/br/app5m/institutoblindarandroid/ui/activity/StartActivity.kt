@@ -1,7 +1,9 @@
 package com.br.app5m.institutoblindarandroid.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -11,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.br.app5m.institutoblindarandroid.R
 import com.br.app5m.institutoblindarandroid.databinding.ActivityStartBinding
+import kotlinx.android.synthetic.main.activity_start.*
 
 class StartActivity : AppCompatActivity() {
 
@@ -34,6 +37,9 @@ class StartActivity : AppCompatActivity() {
 
 
         visibilityNavElements(navController) //If you want to hide drawer or bottom navigation configure that in this function
+
+
+        start()
     }
 
     private fun visibilityNavElements(navController: NavController) {
@@ -52,6 +58,40 @@ class StartActivity : AppCompatActivity() {
 
     }
 
+    private fun start() {
+        Handler().postDelayed({
+            logoimageSplash2.alpha = 0f
+            logoimageSplash2.animate().alpha(1f).duration = 500
+//            splashIv.translationY = 50F
+        }, 1)
+
+
+
+        Handler().postDelayed({
+            logoimageSplash.alpha = 1f
+            logoimageSplash.animate().alpha(0f).duration = 500
+/////////////////////////////////////////
+
+            Handler().postDelayed({
+                logoimageSplash.alpha = 0f
+                logoimageSplash.animate().alpha(1f).duration = 500
+            }, 1)
+
+
+
+            Handler().postDelayed({
+                logoimageSplash.alpha = 1f
+                logoimageSplash.animate().alpha(0f).duration = 500
+                startLL.visibility = View.VISIBLE
+
+
+            }, 1000)
+
+///////////////////////////////////////
+
+        }, 3000)
+
+    }
 
 
     fun exitApp() { //To exit the application call this function from fragment

@@ -7,18 +7,27 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.home.HomeFragment"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_newCallFrag"
+            app:destination="@id/newCallFrag" />
+    </fragment>
     <fragment
         android:id="@+id/mainMenuFrag"
-        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.menu.MainMenuFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.menu.MainMenuFrag"
         android:label="fragment_main_menu"
         tools:layout="@layout/fragment_main_menu" />
     <fragment
         android:id="@+id/myCallsFrag"
-        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.mycalls.MyCallsFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.MyCallsFrag"
         android:label="fragment_my_calls"
         tools:layout="@layout/fragment_my_calls" />
+    <fragment
+        android:id="@+id/newCallFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.home.newcall.NewCallFrag"
+        android:label="new_call_fragment"
+        tools:layout="@layout/new_call_fragment" />
 
 </navigation>

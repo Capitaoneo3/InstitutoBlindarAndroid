@@ -10,6 +10,8 @@
     <item name="android:navigationBarColor">@color/trasparent</item>
     <item name="android:windowLightStatusBar">false</item>
     <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+    <item name="android:windowBackground">@color/grayBg</item>
+
     <item name="android:textColor">@color/textColor</item>
     <item name="android:textColorPrimary">@color/textColor</item>
     <item name="android:fontFamily">@font/metropolis_regular</item>
@@ -118,10 +120,10 @@
 <style name="button1">
     <item name="rippleColor">@color/white</item>
     <item name="backgroundTint">@color/colorPrimary</item>
-    <item name="android:minHeight">55dp</item>
 
     <item name="android:minWidth">90dp</item>
     <item name="android:textAllCaps">false</item>
+    <item name="android:textColor">#FFFFFF</item>
 
 
     <item name="android:textSize">@dimen/text_size5</item>
@@ -137,15 +139,16 @@
 -
 
 <style name="button2">
-    <item name="rippleColor">@color/white</item>
-    <item name="backgroundTint">@color/appturquoise</item>
-    <item name="android:minHeight">65dp</item>
+    <item name="rippleColor">@color/colorPrimary</item>
+    <item name="backgroundTint">#FFFFFF</item>
+    <item name="iconTint">@color/colorPrimary</item>
 
     <item name="android:minWidth">90dp</item>
     <item name="android:textAllCaps">false</item>
 
 
     <item name="android:textSize">@dimen/text_size5</item>
+    <item name="android:textColor">@color/colorPrimary</item>
 
 
     <item name="cornerRadius">15dp</item>

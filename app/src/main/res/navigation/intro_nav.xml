@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/intro_nav"
     app:startDestination="@id/introContainerFrag">
 
     <fragment
         android:id="@+id/introContainerFrag"
-        android:name="br.com.app5m.chaveirosmania.ui.fragment.intro.IntroContainerFrag"
-        android:label="IntroContainerFrag" />
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.Intro.IntroContainerFrag"
+        android:label="IntroContainerFrag" >
+        <action
+            android:id="@+id/action_introContainerFrag_to_loginFrag"
+            app:destination="@id/loginFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.Intro.auth.LoginFrag"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>

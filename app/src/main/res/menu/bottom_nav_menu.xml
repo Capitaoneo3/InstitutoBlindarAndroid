@@ -9,11 +9,11 @@
     <item
         android:id="@+id/myCallsFrag"
         android:icon="@drawable/ic_baseline_announcement_24"
-        android:title="@string/title_dashboard" />
+        android:title="Meus Chamados" />
 
     <item
         android:id="@+id/mainMenuFrag"
         android:icon="@drawable/ic_baseline_menu_24"
-        android:title="@string/title_notifications" />
+        android:title="Menu" />
 
 </menu>
