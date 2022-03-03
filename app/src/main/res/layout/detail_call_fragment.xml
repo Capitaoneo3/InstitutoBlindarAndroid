@@ -13,22 +13,26 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             app:tabIndicatorColor="@color/white"
+            app:tabIconTint="@color/white"
+
             app:tabTextColor="@color/white">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/fab_add"
+                android:icon="@drawable/ic_baseline_textsms_24"
                 android:text="Mensagens" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:icon="@drawable/ic_microphone_"
                 android:text="Áudios" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:icon="@drawable/ic_baseline_insert_drive_file_24"
                 android:text="Arquivos" />
 
         </com.google.android.material.tabs.TabLayout>

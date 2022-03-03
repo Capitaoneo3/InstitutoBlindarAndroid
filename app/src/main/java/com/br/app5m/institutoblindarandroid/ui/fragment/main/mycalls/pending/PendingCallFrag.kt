@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -56,7 +57,7 @@ class PendingCallFrag : Fragment() {
             override fun onClickListenerLastCallsAdapter(call: Call) {
                 super.onClickListenerLastCallsAdapter(call)
 
-//                findNavController().navigate(R.id.action_checkout1Frag_to_checkout2Frag2)
+                findNavController().navigate(R.id.action_myCallsFrag_to_detailCallFrag)
 
             }
 

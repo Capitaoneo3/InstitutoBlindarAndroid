@@ -7,31 +7,31 @@
         android:orientation="vertical"
         tools:context=".ui.fragment.main.mycalls.MyCallsFrag">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabView"
-            android:layout_width="match_parent"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        app:tabIndicatorColor="@color/white"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/white">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            app:tabIndicatorColor="@color/white"
-            app:tabMode="scrollable"
-            app:tabTextColor="@color/white">
+            android:text="Pendentes" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pendentes" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Em Andamento" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Em Andamento" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finalizados" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Finalizados" />
-
-        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/mPager"

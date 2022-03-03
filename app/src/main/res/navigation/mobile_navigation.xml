@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_home_to_newCallFrag"
             app:destination="@id/newCallFrag" />
+        <action
+            android:id="@+id/action_navigation_home_to_detailCallFrag"
+            app:destination="@id/detailCallFrag" />
     </fragment>
     <fragment
         android:id="@+id/mainMenuFrag"
@@ -23,11 +26,45 @@
         android:id="@+id/myCallsFrag"
         android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.MyCallsFrag"
         android:label="fragment_my_calls"
-        tools:layout="@layout/fragment_my_calls" />
+        tools:layout="@layout/fragment_my_calls" >
+        <action
+            android:id="@+id/action_myCallsFrag_to_detailCallFrag"
+            app:destination="@id/detailCallFrag" />
+    </fragment>
     <fragment
         android:id="@+id/newCallFrag"
         android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.home.newcall.NewCallFrag"
         android:label="new_call_fragment"
         tools:layout="@layout/new_call_fragment" />
+    <fragment
+        android:id="@+id/detailCallFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.DetailCallFrag"
+        android:label="detail_call_fragment"
+        tools:layout="@layout/detail_call_fragment" >
+        <action
+            android:id="@+id/action_detailCallFrag_to_archivesFrag"
+            app:destination="@id/archivesFrag" />
+        <action
+            android:id="@+id/action_detailCallFrag_to_audiosFrag"
+            app:destination="@id/audiosFrag" />
+        <action
+            android:id="@+id/action_detailCallFrag_to_messagesFrag"
+            app:destination="@id/messagesFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/archivesFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.archives.ArchivesFrag"
+        android:label="archives_fragment"
+        tools:layout="@layout/archives_fragment" />
+    <fragment
+        android:id="@+id/audiosFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.audios.AudiosFrag"
+        android:label="audios_fragment"
+        tools:layout="@layout/audios_fragment" />
+    <fragment
+        android:id="@+id/messagesFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.message.MessagesFrag"
+        android:label="messages_fragment"
+        tools:layout="@layout/messages_fragment" />
 
 </navigation>

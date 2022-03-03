@@ -191,12 +191,12 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/okButton2"
+            android:id="@+id/sendButton"
             style="@style/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/button_rounded_filled"
             android:paddingLeft="60dp"
@@ -207,6 +207,7 @@
             app:iconGravity="end"
             app:iconTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 

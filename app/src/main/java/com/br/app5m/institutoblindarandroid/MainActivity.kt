@@ -94,9 +94,10 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-           /*     R.id.mainMenuFrag -> hideBothNavigation()
-                R.id.myCallsFrag -> hideBottomNavigation()*/
-                else -> showBothNavigation()
+                R.id.navigation_home -> showBothNavigation()
+                R.id.myCallsFrag -> showBothNavigation()
+                R.id.mainMenuFrag -> showBothNavigation()
+                else -> hideBottomNavigation()
             }
         }
 

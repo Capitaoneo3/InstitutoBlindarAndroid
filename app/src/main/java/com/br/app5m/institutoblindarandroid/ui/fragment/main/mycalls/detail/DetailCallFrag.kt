@@ -10,6 +10,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.br.app5m.institutoblindarandroid.R
 import com.br.app5m.institutoblindarandroid.helper.ZoomOutPageTransformer
+import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.archives.ArchivesFrag
+import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.audios.AudiosFrag
+import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.message.MessagesFrag
 import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.finalized.FinalizedCallFrag
 import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.inprogress.InProgressCallFrag
 import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.pending.PendingCallFrag
@@ -56,9 +59,9 @@ class DetailCallFrag : Fragment() {
 
         TabLayoutMediator(tabView, mPager) { tab: TabLayout.Tab, position: Int ->
             when (position) {
-                0 -> tab.text = "Pendentes"
-                1 -> tab.text = "Em Andamento"
-                2 -> tab.text = "Finalizados"
+                0 -> tab.text = "Mensagens"
+                1 -> tab.text = "Áudios"
+                2 -> tab.text = "Arquivos"
 
 
             }
@@ -73,11 +76,11 @@ class DetailCallFrag : Fragment() {
         FragmentStateAdapter(fa!!) {
         override fun createFragment(position: Int): Fragment {
             return when (position) {
-                0 -> PendingCallFrag()
-                1 -> InProgressCallFrag()
+                0 -> MessagesFrag()
+                1 -> AudiosFrag()
 
                 else -> {
-                    FinalizedCallFrag()
+                    ArchivesFrag()
                 }
             }
 

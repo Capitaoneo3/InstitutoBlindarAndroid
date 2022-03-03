@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
             override fun onClickListenerLastCallsAdapter(call: Call) {
                 super.onClickListenerLastCallsAdapter(call)
 
-//                findNavController().navigate(R.id.action_checkout1Frag_to_checkout2Frag2)
+                findNavController().navigate(R.id.action_navigation_home_to_detailCallFrag)
 
             }
 

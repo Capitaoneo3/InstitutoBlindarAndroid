@@ -1,4 +1,4 @@
-package com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.inprogress
+package com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.message
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -15,37 +15,32 @@ import com.br.app5m.institutoblindarandroid.R
 import com.br.app5m.institutoblindarandroid.helper.MyUseFulKotlin
 import com.br.app5m.institutoblindarandroid.helper.RecyclerItemClickListener
 import com.br.app5m.institutoblindarandroid.model.Call
-import com.br.app5m.institutoblindarandroid.ui.adapter.Last_calls_adapter
-import com.br.app5m.institutoblindarandroid.ui.fragment.main.home.HomeViewModel
-import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.pending.PendingCallFrag
-import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.pending.PendingCallViewModel
-import kotlinx.android.synthetic.main.in_progress_call_fragment.*
-import kotlinx.android.synthetic.main.pending_call_fragment.*
-import kotlinx.android.synthetic.main.pending_call_fragment.pendingCall_Rv
+import com.br.app5m.institutoblindarandroid.model.Message
+import com.br.app5m.institutoblindarandroid.ui.adapter.Message_adapter
+import kotlinx.android.synthetic.main.messages_fragment.*
 
-class InProgressCallFrag : Fragment() {
+class MessagesFrag : Fragment() {
     private lateinit var alertDialog: AlertDialog
     private lateinit var builder: AlertDialog.Builder
 
     private lateinit var callsAdapter: RecyclerView.Adapter<*>
-    private val callsList = java.util.ArrayList<Call>()
+    private val callsList = java.util.ArrayList<Message>()
     companion object {
-        fun newInstance() = InProgressCallFrag()
+        fun newInstance() = MessagesFrag()
     }
 
-    private lateinit var viewModel: InProgressCallViewModel
+    private lateinit var viewModel: MessagesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.in_progress_call_fragment, container, false)
+        return inflater.inflate(R.layout.messages_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(InProgressCallViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProvider(this).get(MessagesViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,7 +51,7 @@ class InProgressCallFrag : Fragment() {
         configureLast_callsAdapter()
     }
     fun configureLast_callsAdapter(){
-        callsAdapter = Last_calls_adapter(callsList, object : RecyclerItemClickListener {
+        callsAdapter = Message_adapter(callsList, object : RecyclerItemClickListener {
             override fun onClickListenerLastCallsAdapter(call: Call) {
                 super.onClickListenerLastCallsAdapter(call)
 
@@ -69,7 +64,7 @@ class InProgressCallFrag : Fragment() {
 
         val vmProduct = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
-        InProgressCall_Rv.apply {
+        messagesRv.apply {
             setHasFixedSize(true)
             setItemViewCacheSize(512)
             callsAdapter.setHasStableIds(true)
@@ -82,7 +77,7 @@ class InProgressCallFrag : Fragment() {
                     null
                 )
             )
-            InProgressCall_Rv.addItemDecoration(itemDecoration)
+            messagesRv.addItemDecoration(itemDecoration)
 
 
 
@@ -102,13 +97,13 @@ class InProgressCallFrag : Fragment() {
         MyUseFulKotlin().closeLoading( alertDialog)
 
         callsList.clear()
-        var category = Call( "Advogados","Em Andamento", R.drawable.ic_baseline_balance_24)
+        var category = Message( "eu","0")
         callsList.add(category)
-        category = Call( "Médicos","Em Andamento", R.drawable.ic_baseline_medical_services_24)
+        category = Message( "Dr Izzac","1")
         callsList.add(category)
-        category = Call( "Jornalistas","Em Andamento", R.drawable.ic_microphone_)
+        category = Message( "eu","0")
         callsList.add(category)
-        category = Call( "Administradores","Em Andamento", R.drawable.ic_noun_administrator_1046321)
+        category = Message( "Dr Izzac","1")
         callsList.add(category)
 
 

@@ -7,6 +7,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="mtrl_shape_corner_size_small_component">4dp</dimen>
 
     <dimen name="text_size_super">30.0sp</dimen>
     <dimen name="text_size_semi_super">28.0sp</dimen>
