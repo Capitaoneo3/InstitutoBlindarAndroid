@@ -21,7 +21,11 @@
         android:id="@+id/mainMenuFrag"
         android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.menu.MainMenuFrag"
         android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFrag_to_profileFrag"
+            app:destination="@id/profileFrag" />
+    </fragment>
     <fragment
         android:id="@+id/myCallsFrag"
         android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.MyCallsFrag"
@@ -74,5 +78,10 @@
         android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.audios.sendingaudio.SendingAudioFragment"
         android:label="sending_audio_fragment"
         tools:layout="@layout/sending_audio_fragment" />
+    <fragment
+        android:id="@+id/profileFrag"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.menu.profile.ProfileFrag"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
 
 </navigation>

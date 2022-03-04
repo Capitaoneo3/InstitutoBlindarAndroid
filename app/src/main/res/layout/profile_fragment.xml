@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.main.menu.profile.ProfileFrag">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:src="@drawable/avatar" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:outlineProvider="background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/textInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColorHint="@color/textColor2"
+                            app:boxStrokeWidth="0dp"
+
+                            app:endIconMode="custom"
+                            app:endIconTint="#797A7D"
+                            android:hint="Nome"
+                            app:hintAnimationEnabled="true"
+                            app:hintEnabled="true"
+                            app:hintTextColor="@color/textColor2"
+                            app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
+                            app:startIconTint="@color/colorPrimaryDark">
+
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_et_input"
+                                    android:ems="10"
+
+                                    android:inputType="text"
+                                    android:textColor="@color/textColor2"
+                                    android:textColorHint="@color/textColor2"
+                                    android:textSize="16sp" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:outlineProvider="background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/textInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Email"
+                            app:hintAnimationEnabled="true"
+                            app:hintEnabled="true"
+                            android:textColorHint="@color/textColor2"
+                            app:hintTextColor="@color/textColor2"
+
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="custom"
+                            app:endIconTint="#797A7D"
+                            app:startIconDrawable="@drawable/ic_baseline_email_24"
+                            app:startIconTint="@color/colorPrimaryDark">
+
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/email"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_et_input"
+                                    android:ems="10"
+                                    android:inputType="textEmailAddress"
+                                    android:textColor="@color/textColor2"
+                                    android:textColorHint="@color/textColor2"
+                                    android:textSize="16sp" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:outlineProvider="background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/textInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Celular"
+                            app:hintAnimationEnabled="true"
+                            app:hintEnabled="true"
+                            app:hintTextColor="@color/textColor2"
+
+                            android:textColorHint="@color/textColor2"
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="custom"
+                            app:endIconTint="#797A7D"
+
+                            app:startIconDrawable="@drawable/ic_baseline_call_24"
+                            app:startIconTint="@color/colorPrimaryDark">
+
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/phone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_et_input"
+                                    android:ems="10"
+                                    android:inputType="number"
+                                    android:textColor="@color/textColor2"
+                                    android:textColorHint="@color/textColor2"
+                                    android:textSize="16sp" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:outlineProvider="background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/textInputLayout"
+                            android:hint="Meu Plano"
+                            app:hintAnimationEnabled="true"
+                            app:hintEnabled="true"
+                            android:textColorHint="@color/textColor2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="custom"
+                            app:endIconTint="#797A7D"
+                            app:hintTextColor="@color/textColor2"
+
+                            app:startIconDrawable="@drawable/ic_baseline_medical_services_24"
+                            app:startIconTint="@color/colorPrimaryDark">
+
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/plan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_et_input"
+                                    android:ems="10"
+                                    android:inputType="text"
+                                    android:textColor="@color/textColor2"
+                                    android:textColorHint="@color/textColor2"
+                                    android:textSize="16sp" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:outlineProvider="background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/textInputLayout"
+                            android:hint="CPF"
+                            app:hintAnimationEnabled="true"
+                            app:hintEnabled="true"
+                            android:textColorHint="@color/textColor2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="custom"
+                            app:endIconTint="#797A7D"
+                            app:hintTextColor="@color/textColor2"
+
+                            app:startIconDrawable="@drawable/ic_baseline_chrome_reader_mode_24"
+                            app:startIconTint="@color/colorPrimaryDark">
+
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/document"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_et_input"
+                                    android:ems="10"
+                                    android:inputType="number"
+                                    android:textColor="@color/textColor2"
+                                    android:textColorHint="@color/textColor2"
+                                    android:textSize="16sp" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:outlineProvider="background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/textInputLayout"
+                            android:hint="Data de Nascimento"
+                            app:hintAnimationEnabled="true"
+                            app:hintEnabled="true"
+                            android:textColorHint="@color/textColor2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="custom"
+                            app:endIconTint="#797A7D"
+                            app:hintTextColor="@color/textColor2"
+
+                            app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
+                            app:startIconTint="@color/colorPrimaryDark">
+
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/dateNasc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_et_input"
+                                    android:ems="10"
+                                    android:inputType="number"
+                                    android:textColor="@color/textColor2"
+                                    android:textColorHint="@color/textColor2"
+                                    android:textSize="16sp" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

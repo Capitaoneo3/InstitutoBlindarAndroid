@@ -95,17 +95,17 @@ class MyUseFulKotlin {
     @SuppressLint("UseCompatLoadingForDrawables")
     fun setActionBar(activity: Activity, bar: ActionBar, title: String, type: Int){
 
-   /*     val view = activity.layoutInflater.inflate(R.layout.tool_bar, null)
+/*   *//*     val view = activity.layoutInflater.inflate(R.layout.tool_bar, null)
         val params = ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,
-            ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER)*/
+            ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER)*//*
 
-      /*  val textTitle = view.findViewById<TextView>(R.id.toolbarTitle)
+      *//*  val textTitle = view.findViewById<TextView>(R.id.toolbarTitle)
         textTitle.text = title
-        bar.setCustomView(view, params)*/
+        bar.setCustomView(view, params)*//*
 
 //        if (type == 0) {
 //            bar.setHomeAsUpIndicator(activity.resources.getDrawable(R.drawable.ic_arrow_left_green, null))
-//        }
+//        }*/
 
         bar.setDisplayShowTitleEnabled(false)
         bar.setDisplayShowCustomEnabled(true)

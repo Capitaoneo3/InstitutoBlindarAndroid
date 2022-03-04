@@ -29,6 +29,7 @@
             android:paddingTop="24dp"
             android:paddingEnd="24dp"
             android:paddingBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
             app:layout_constraintVertical_bias="0.0"
             fab:layout_constraintBottom_toBottomOf="parent"
             fab:layout_constraintEnd_toEndOf="parent"
@@ -154,12 +155,10 @@
             android:id="@+id/linearLayout7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/sendButton"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <TextView
                 android:id="@+id/textView6"
@@ -196,8 +195,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="48dp"
             android:layout_marginEnd="24dp"
+            android:layout_marginBottom="56dp"
             android:background="@drawable/button_rounded_filled"
             android:paddingLeft="60dp"
             android:paddingRight="24dp"
@@ -206,10 +205,10 @@
             app:icon="@drawable/ic_baseline_send_24"
             app:iconGravity="end"
             app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

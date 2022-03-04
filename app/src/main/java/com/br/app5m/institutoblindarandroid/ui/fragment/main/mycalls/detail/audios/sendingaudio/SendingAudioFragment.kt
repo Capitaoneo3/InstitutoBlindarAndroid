@@ -84,7 +84,7 @@ class SendingAudioFragment : Fragment(),
         val observer: ViewTreeObserver = mVisualizerView2.getViewTreeObserver()
         observer.addOnGlobalLayoutListener(object : OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-                mVisualizerView2.setBaseY(mVisualizerView2.getHeight() / 5)
+//                mVisualizerView2.setBaseY(mVisualizerView2.getHeight() / 5)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     mVisualizerView2.getViewTreeObserver().removeOnGlobalLayoutListener(this)
                 } else {
@@ -134,6 +134,7 @@ class SendingAudioFragment : Fragment(),
             recordingSampler?.link(mVisualizerView2)     // link to visualizer
             recordingSampler?.startRecording()
             startTimer()
+            sendBt.setOnClickListener { findNavController().navigateUp() }
         }
     }
 
