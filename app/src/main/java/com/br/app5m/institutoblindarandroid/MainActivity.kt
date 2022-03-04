@@ -1,5 +1,6 @@
 package com.br.app5m.institutoblindarandroid
 
+import android.Manifest
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -38,9 +39,14 @@ import android.graphics.Bitmap
 import android.util.TypedValue
 
 import android.app.Activity
+import android.content.pm.PackageManager
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.animation.core.TargetBasedAnimation
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.squareup.picasso.Picasso.LoadedFrom
+import com.tyorikan.voicerecordingvisualizer.RecordingSampler
 import java.lang.Exception
 
 
@@ -70,7 +76,9 @@ class MainActivity : AppCompatActivity() {
 
         visibilityNavElements(navController) //If you want to hide drawer or bottom navigation configure that in this function
 
+
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.actionbar_menu_item, menu)
@@ -229,6 +237,8 @@ class MainActivity : AppCompatActivity() {
         //Setup appBarConfiguration for back arrow
         return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
+
+
 
 /*    override fun onBackPressed() {
 

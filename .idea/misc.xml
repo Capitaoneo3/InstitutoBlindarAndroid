@@ -24,10 +24,12 @@
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/teste_botao_default.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/activity_main.xml" value="0.31979166666666664" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/activity_start.xml" value="0.33" />
+        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_audio.xml" value="0.6391608391608392" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_message.xml" value="0.5887372013651877" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_ultimos_5_chamados.xml" value="0.5" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/app_bar_main.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/archives_fragment.xml" value="0.3015625" />
+        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/audios_fragment.xml" value="0.315625" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/buttons_top_home.xml" value="0.33" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/count.xml" value="0.2898148148148148" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/custom_action_item_layout.xml" value="0.33" />
@@ -46,6 +48,7 @@
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/new_call_fragment.xml" value="0.24719101123595505" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/notification.xml" value="0.2898148148148148" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/pending_call_fragment.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/sending_audio_fragment.xml" value="0.315625" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/ultimos_5_chamados_abertos.xml" value="0.287962962962963" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/actionbar_menu_item.xml" value="0.2898148148148148" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/bottom_nav_menu.xml" value="0.31979166666666664" />

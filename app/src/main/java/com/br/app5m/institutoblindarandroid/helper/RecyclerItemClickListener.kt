@@ -15,6 +15,8 @@ interface RecyclerItemClickListener {
     fun onClickListenerMessageAdapter(message: Message){
         //optional body
     }
-
+    fun onClickListenerAudioAdapter(message: Message){
+        //optional body
+    }
 
 }
