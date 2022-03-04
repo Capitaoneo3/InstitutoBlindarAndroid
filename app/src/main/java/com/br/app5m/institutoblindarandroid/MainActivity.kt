@@ -17,16 +17,37 @@ import androidx.navigation.ui.setupWithNavController
 import com.br.app5m.institutoblindarandroid.databinding.ActivityMainBinding
 
 import android.widget.TextView
+import android.graphics.drawable.ColorDrawable
 
+import com.squareup.picasso.Picasso
 
+import android.graphics.drawable.Drawable
 
+import android.animation.PropertyValuesHolder
 
-var textCartItemCount: TextView? = null
-var mCartItemCount = 10
+import android.animation.ObjectAnimator
 
+import android.graphics.drawable.LayerDrawable
+
+import android.view.Gravity
+
+import android.graphics.drawable.BitmapDrawable
+
+import android.graphics.Bitmap
+
+import android.util.TypedValue
+
+import android.app.Activity
+import android.widget.Toast
+import androidx.compose.animation.core.TargetBasedAnimation
+import com.squareup.picasso.Picasso.LoadedFrom
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
+    var textCartItemCount: TextView? = null
+    var mCartItemCount = 10
+    private lateinit var logoTarget: com.squareup.picasso.Target
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
@@ -92,16 +113,86 @@ class MainActivity : AppCompatActivity() {
         //Modify this according to your need
         //If you want you can implement logic to deselect(styling) the bottom navigation menu item when drawer item selected using listener
 
+        supportActionBar?.show()
+        supportActionBar?.setDisplayShowCustomEnabled(true)
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.navigation_home -> showBothNavigation()
+                R.id.navigation_home ->{
+                    supportActionBar?.setDisplayShowTitleEnabled(false)
+                    showActionBarLogo(this, true)
+
+                    showBothNavigation()
+                }
                 R.id.myCallsFrag -> showBothNavigation()
                 R.id.mainMenuFrag -> showBothNavigation()
-                else -> hideBottomNavigation()
+                else ->{
+                    showActionBarLogo(this, false)
+
+                    supportActionBar?.setDisplayShowTitleEnabled(true)
+
+                    hideBottomNavigation()
+                }
             }
         }
 
     }
+    fun showActionBarLogo(activity: Activity, show: Boolean) {
+        if (show) {
+            // Calculate Action bar height
+            var actionBarHeight = 200
+            val tv = TypedValue()
+            if (activity.theme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+                actionBarHeight = TypedValue.complexToDimensionPixelSize(
+                    tv.data,
+                    activity.resources.displayMetrics
+                )
+            }
+
+            // Using action bar background drawable
+             logoTarget = object :com.squareup.picasso.Target {
+                override fun onBitmapLoaded(bitmap: Bitmap?, from: LoadedFrom?) {
+                    val layers = arrayOfNulls<Drawable>(2)
+                    layers[0] = ColorDrawable( resources.getColor(R.color.colorPrimary)) // Background color of Action bar
+                    val bd = BitmapDrawable(activity.resources, bitmap)
+                    bd.gravity = Gravity.CENTER
+                    val drawLogo: Drawable = bd
+                    layers[1] = drawLogo // Bitmap logo of Action bar (loaded from Picasso)
+                    val layerDrawable = LayerDrawable(layers)
+                    layers[1]!!.alpha = 0
+                    (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(
+                        layerDrawable
+                    )
+                    val animator = ObjectAnimator.ofPropertyValuesHolder(
+                        layers[1],
+                        PropertyValuesHolder.ofInt("alpha", 255)
+                    )
+                    animator.target = layers[1]
+                    animator.duration = 2000
+                    animator.start()
+                }
+
+                 override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                     Toast.makeText(this@MainActivity, e?.localizedMessage, Toast.LENGTH_SHORT).show()
+
+                 }
+
+                override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+
+                }
+            }
+            Picasso.get()
+                .load( R.drawable.blindar_branco)
+                .resize(0, actionBarHeight).into(logoTarget)
+        } else {
+            (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(
+                ColorDrawable(
+                    resources.getColor(R.color.colorPrimary)
+                )
+            )
+        }
+    }
+
 
     private fun hideBothNavigation() { //Hide both drawer and bottom navigation bar
         binding.mainBottomNavigationView.visibility = View.GONE
