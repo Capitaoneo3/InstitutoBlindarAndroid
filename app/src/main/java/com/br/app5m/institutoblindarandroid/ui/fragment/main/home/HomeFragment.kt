@@ -117,6 +117,8 @@ fun clicks(){
         callsList.add(category)
         category = Call( "Administradores","Aprovado", R.drawable.ic_noun_administrator_1046321)
         callsList.add(category)
+        category = Call( "Advogados","Aprovado", R.drawable.ic_baseline_balance_24)
+        callsList.add(category)
 
 
     }

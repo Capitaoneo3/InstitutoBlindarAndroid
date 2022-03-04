@@ -7,69 +7,160 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.br.app5m.institutoblindarandroid.R
+import com.br.app5m.institutoblindarandroid.helper.MyUseFulKotlin
 import com.br.app5m.institutoblindarandroid.helper.RecyclerItemClickListener
+import com.br.app5m.institutoblindarandroid.model.Call
 import com.br.app5m.institutoblindarandroid.model.Message
-import rm.com.audiowave.AudioWaveView
+import kotlinx.android.synthetic.main.archives_fragment.*
+import androidx.recyclerview.widget.GridLayoutManager
+
+
+
 
 class Files_adapter (private val messageList: List<Message>, val clickListener: RecyclerItemClickListener, context: Context):
-    RecyclerView.Adapter<Files_adapter.AudioHolder>() {
-
+    RecyclerView.Adapter<Files_adapter.FileHolder>() {
+    private lateinit var callsAdapter: RecyclerView.Adapter<*>
+    private val callsList = java.util.ArrayList<Message>()
     val context = context
     private val viewPool = RecyclerView.RecycledViewPool()
 
 
 
-    class AudioHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val waveHe: AudioWaveView = itemView.findViewById(R.id.waveHe)
+    class FileHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val nameHe: TextView = itemView.findViewById(R.id.nameHe)
         val dateHe: TextView = itemView.findViewById(R.id.dateHe)
+        val fileRvHe: RecyclerView = itemView.findViewById(R.id.fileRvHe)
         val profile_imageHe: ImageView = itemView.findViewById(R.id.profile_imageHe)
-        val heMessageLayout: ConstraintLayout = itemView.findViewById(R.id.HeAudioLayout)
+        val HeFileLayout: ConstraintLayout = itemView.findViewById(R.id.HeFileLayout)
 
-        val waveSelf: AudioWaveView = itemView.findViewById(R.id.waveSelf)
         val nameSelf: TextView = itemView.findViewById(R.id.nameSelf)
         val dateSelf: TextView = itemView.findViewById(R.id.dateSelf)
+        val fileRvSelf: RecyclerView = itemView.findViewById(R.id.fileRvSelf)
         val profile_imageSelf: ImageView = itemView.findViewById(R.id.profile_imageSelf)
-        val SelfMessageLayout: ConstraintLayout = itemView.findViewById(R.id.SelfAudioLayout)
+        val SelfFileLayout: ConstraintLayout = itemView.findViewById(R.id.SelfFileLayout)
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AudioHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FileHolder {
 
-        return AudioHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_files, parent, false))
+        return FileHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_files, parent, false))
     }
 
-    override fun onBindViewHolder(audioHolder: AudioHolder, position: Int) {
+    override fun onBindViewHolder(fileHolder: FileHolder, position: Int) {
         val message = messageList[position]
 
-
+        createFilesChieldcalls()
 
         if (message.id == "0"){
 //            callsHolder.icon.setImageDrawable(ContextCompat.getDrawable(context,message.icon!!))
 
-            audioHolder.heMessageLayout.visibility = View.GONE
-            audioHolder.SelfMessageLayout.visibility = View.VISIBLE
-           audioHolder.nameSelf.text = message.nome.toString()
-
+            fileHolder.HeFileLayout.visibility = View.GONE
+            fileHolder.SelfFileLayout.visibility = View.VISIBLE
+           fileHolder.nameSelf.text = message.nome.toString()
+            configureFilesChieldSelfAdapter(fileHolder)
 
         }else{
-            audioHolder.heMessageLayout.visibility = View.VISIBLE
-            audioHolder.SelfMessageLayout.visibility = View.GONE
-            audioHolder.nameHe.text = message.nome.toString()
-
+            fileHolder.HeFileLayout.visibility = View.VISIBLE
+            fileHolder.SelfFileLayout.visibility = View.GONE
+            fileHolder.nameHe.text = message.nome.toString()
+            configureFilesChieldHeAdapter(fileHolder)
         }
 
 
 
 
-        audioHolder.itemView.setOnClickListener { clickListener.onClickListenerAudioAdapter(message) }
+        fileHolder.itemView.setOnClickListener { clickListener.onClickListenerFileAdapter(message) }
 
     }
 
     override fun getItemCount(): Int {
         return messageList.size
     }
+    fun configureFilesChieldHeAdapter(holder:FileHolder){
+        callsAdapter = Files_chield_adapter(callsList, object : RecyclerItemClickListener {
+            override fun onClickListenerLastCallsAdapter(call: Call) {
+                super.onClickListenerLastCallsAdapter(call)
 
+
+            }
+
+        },context)
+
+
+        val vmProduct = GridLayoutManager(context, 2)
+
+       holder.fileRvHe.apply {
+            setHasFixedSize(true)
+            setItemViewCacheSize(512)
+            callsAdapter.setHasStableIds(true)
+
+
+
+
+
+
+
+            layoutManager = vmProduct
+            adapter = callsAdapter
+
+
+
+
+        }
+
+    }
+    fun configureFilesChieldSelfAdapter(holder:FileHolder){
+        callsAdapter = Files_chield_adapter(callsList, object : RecyclerItemClickListener {
+            override fun onClickListenerLastCallsAdapter(call: Call) {
+                super.onClickListenerLastCallsAdapter(call)
+
+
+            }
+
+        },context)
+
+
+        val vmProduct = GridLayoutManager(context, 2)
+
+        holder.fileRvSelf.apply {
+            setHasFixedSize(true)
+            setItemViewCacheSize(512)
+            callsAdapter.setHasStableIds(true)
+
+
+
+
+
+
+
+            layoutManager = vmProduct
+            adapter = callsAdapter
+
+
+
+
+        }
+
+    }
+
+    fun createFilesChieldcalls() {
+
+
+        callsList.clear()
+        var category = Message( "eu","0")
+        callsList.add(category)
+        category = Message( "Dr Izzac","1")
+        callsList.add(category)
+        category = Message( "eu","0")
+        callsList.add(category)
+        category = Message( "Dr Izzac","1")
+        callsList.add(category)
+
+
+    }
 }

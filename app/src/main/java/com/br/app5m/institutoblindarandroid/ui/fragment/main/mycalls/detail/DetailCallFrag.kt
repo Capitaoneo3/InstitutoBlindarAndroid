@@ -53,19 +53,22 @@ class DetailCallFrag : Fragment() {
 
         adapter = ScreenSlidePagerAdapter(activity)
         adapter.notifyDataSetChanged()
-        mPager.adapter = adapter
+        if (isAdded){
 
-        mPager.setPageTransformer(ZoomOutPageTransformer())
+            mPager.adapter = adapter
+            mPager.setPageTransformer(ZoomOutPageTransformer())
 
-        TabLayoutMediator(tabView, mPager) { tab: TabLayout.Tab, position: Int ->
-            when (position) {
-                0 -> tab.text = "Mensagens"
-                1 -> tab.text = "Áudios"
-                2 -> tab.text = "Arquivos"
+            TabLayoutMediator(tabView, mPager) { tab: TabLayout.Tab, position: Int ->
+                when (position) {
+                    0 -> tab.text = "Mensagens"
+                    1 -> tab.text = "Áudios"
+                    2 -> tab.text = "Arquivos"
 
 
-            }
-        }.attach()
+                }
+            }.attach()
+        }
+
         /* if (positionVp !=0){
              mPager.setCurrentItem(1, false)
          }*/
