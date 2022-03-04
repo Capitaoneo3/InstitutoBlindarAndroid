@@ -17,6 +17,7 @@ import android.os.Build
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.sending_audio_fragment.*
 import android.os.Environment
+import android.os.Handler
 import android.util.Log
 import android.view.ViewTreeObserver
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
@@ -26,12 +27,22 @@ import androidx.navigation.fragment.findNavController
 import com.br.app5m.institutoblindarandroid.MainActivity
 import com.tyorikan.voicerecordingvisualizer.RecordingSampler
 import com.tyorikan.voicerecordingvisualizer.VisualizerView
+import android.widget.TextView
+import android.os.CountDownTimer
+
+
+
+
+
+
 
 
 class SendingAudioFragment : Fragment(),
+
     RecordingSampler.CalculateVolumeListener {
     var myAudioRecorder: MediaRecorder? = null
     var recordingSampler: RecordingSampler? = null
+    var cTimer: CountDownTimer? = null
 
     companion object {
         fun newInstance() = SendingAudioFragment()
@@ -55,6 +66,9 @@ class SendingAudioFragment : Fragment(),
     @SuppressLint("WrongConstant")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
   /*      myAudioRecorder?.prepare();
         myAudioRecorder?.start();
         var outputFile = Environment.getExternalStorageDirectory().absolutePath + "/recording.3gp"
@@ -119,8 +133,10 @@ class SendingAudioFragment : Fragment(),
             recordingSampler?.setSamplingInterval(100); // voice sampling interval
             recordingSampler?.link(mVisualizerView2)     // link to visualizer
             recordingSampler?.startRecording()
+            startTimer()
         }
     }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -146,11 +162,28 @@ class SendingAudioFragment : Fragment(),
     }
     override fun onCalculateVolume(volume: Int) {
     }
-     override fun onPause() {
-         recordingSampler?.stopRecording()
+
+    fun startTimer() {
+        cTimer = object : CountDownTimer(60000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                if (isAdded){
+
+                    countDownText.setText("Tempo Restante: " + millisUntilFinished / 1000 +" s");
+                }
+
+
+            }
+            override fun onFinish() {
+                recordingSampler?.stopRecording()
+
+            }
+        }
+        (cTimer as CountDownTimer).start()
+    }
+    override fun onPause() {
+        recordingSampler?.stopRecording()
         super.onPause()
     }
-
      override fun onDestroy() {
          recordingSampler?.release()
         super.onDestroy()
