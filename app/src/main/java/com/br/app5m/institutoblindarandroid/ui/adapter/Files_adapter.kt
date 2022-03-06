@@ -54,7 +54,6 @@ class Files_adapter (private val messageList: List<Message>, val clickListener: 
     override fun onBindViewHolder(fileHolder: FileHolder, position: Int) {
         val message = messageList[position]
 
-        createFilesChieldcalls()
 
         if (message.id == "0"){
 //            callsHolder.icon.setImageDrawable(ContextCompat.getDrawable(context,message.icon!!))
@@ -62,13 +61,11 @@ class Files_adapter (private val messageList: List<Message>, val clickListener: 
             fileHolder.HeFileLayout.visibility = View.GONE
             fileHolder.SelfFileLayout.visibility = View.VISIBLE
            fileHolder.nameSelf.text = message.nome.toString()
-            configureFilesChieldSelfAdapter(fileHolder)
 
         }else{
             fileHolder.HeFileLayout.visibility = View.VISIBLE
             fileHolder.SelfFileLayout.visibility = View.GONE
             fileHolder.nameHe.text = message.nome.toString()
-            configureFilesChieldHeAdapter(fileHolder)
         }
 
 
@@ -81,86 +78,5 @@ class Files_adapter (private val messageList: List<Message>, val clickListener: 
     override fun getItemCount(): Int {
         return messageList.size
     }
-    fun configureFilesChieldHeAdapter(holder:FileHolder){
-        callsAdapter = Files_chield_adapter(callsList, object : RecyclerItemClickListener {
-            override fun onClickListenerLastCallsAdapter(call: Call) {
-                super.onClickListenerLastCallsAdapter(call)
 
-
-            }
-
-        },context)
-
-
-        val vmProduct = GridLayoutManager(context, 2)
-
-       holder.fileRvHe.apply {
-            setHasFixedSize(true)
-            setItemViewCacheSize(512)
-            callsAdapter.setHasStableIds(true)
-
-
-
-
-
-
-
-            layoutManager = vmProduct
-            adapter = callsAdapter
-
-
-
-
-        }
-
-    }
-    fun configureFilesChieldSelfAdapter(holder:FileHolder){
-        callsAdapter = Files_chield_adapter(callsList, object : RecyclerItemClickListener {
-            override fun onClickListenerLastCallsAdapter(call: Call) {
-                super.onClickListenerLastCallsAdapter(call)
-
-
-            }
-
-        },context)
-
-
-        val vmProduct = GridLayoutManager(context, 2)
-
-        holder.fileRvSelf.apply {
-            setHasFixedSize(true)
-            setItemViewCacheSize(512)
-            callsAdapter.setHasStableIds(true)
-
-
-
-
-
-
-
-            layoutManager = vmProduct
-            adapter = callsAdapter
-
-
-
-
-        }
-
-    }
-
-    fun createFilesChieldcalls() {
-
-
-        callsList.clear()
-        var category = Message( "eu","0")
-        callsList.add(category)
-        category = Message( "Dr Izzac","1")
-        callsList.add(category)
-        category = Message( "eu","0")
-        callsList.add(category)
-        category = Message( "Dr Izzac","1")
-        callsList.add(category)
-
-
-    }
 }
