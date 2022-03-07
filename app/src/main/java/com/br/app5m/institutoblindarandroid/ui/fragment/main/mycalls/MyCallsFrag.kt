@@ -26,11 +26,6 @@ class MyCallsFrag : Fragment() {
     private lateinit var adapter: FragmentStateAdapter
 
 
-    override fun onResume() {
-        super.onResume()
-        configInitialViews()
-
-    }
 
 
 
@@ -40,10 +35,15 @@ class MyCallsFrag : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_calls, container, false)
+
     }
 
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        configInitialViews()
 
+    }
 
 
     private fun configInitialViews() {
