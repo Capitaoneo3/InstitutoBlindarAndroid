@@ -43,7 +43,8 @@
                     android:src="@drawable/montains_bg"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tint="#2D5AA8" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline7"
@@ -71,11 +72,12 @@
             android:orientation="vertical"
             android:visibility="gone">
 
+
             <com.google.android.material.appbar.AppBarLayout
-                android:visibility="gone"
                 android:id="@+id/main_appbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:theme="@style/AppTheme.AppBarOverlay">
 
                 <androidx.appcompat.widget.Toolbar
