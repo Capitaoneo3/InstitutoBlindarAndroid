@@ -43,9 +43,15 @@ class Last_calls_adapter (private val callsList: List<Call>, val clickListener: 
 
         callsHolder.name.text = call.nome.toString()
         callsHolder.status.text = call.status.toString()
-
-
-
+        if (call.status == "Pendente"){
+            callsHolder.status.setTextColor(ContextCompat.getColor(context,R.color.orange400))
+        }
+        if (call.status == "Em Andamento"){
+            callsHolder.status.setTextColor(ContextCompat.getColor(context,R.color.blue500))
+        }
+        if (call.status == "Aprovado"){
+            callsHolder.status.setTextColor(ContextCompat.getColor(context,R.color.green500))
+        }
         callsHolder.itemView.setOnClickListener { clickListener.onClickListenerLastCallsAdapter(call) }
 
     }

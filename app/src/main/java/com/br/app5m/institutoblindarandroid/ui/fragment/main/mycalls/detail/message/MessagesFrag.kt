@@ -68,24 +68,30 @@ class MessagesFrag : Fragment() {
         floatingActionButton.setOnClickListener {
             var text =    messageInput.text.toString()
             var category = Message( "eu","0",text)
-            callsList.add(category)
-           callsAdapter.notifyDataSetChanged()
-            messageInput.setText("")
-            //refrash no chat e descer automaticamente para baixo
-            messagesRv.viewTreeObserver.addOnGlobalLayoutListener {
-                (callsAdapter.itemCount - 1).takeIf { it > 0 }?.let(messagesRv::smoothScrollToPosition)
-            }
-            val imm: InputMethodManager =
-                activity!!.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-            //Find the currently focused view, so we can grab the correct window token from it.
-            //Find the currently focused view, so we can grab the correct window token from it.
-            var view = activity!!.currentFocus
-            //If no view currently has focus, create a new one, just so we can grab a window token from it
-            //If no view currently has focus, create a new one, just so we can grab a window token from it
-            if (view == null) {
-                view = View(activity)
-            }
-            imm.hideSoftInputFromWindow(view.windowToken, 0)
+
+         if (messageInput.text.toString() !=""){
+             //refrash no chat e descer automaticamente para baixo
+             messagesRv.viewTreeObserver.addOnGlobalLayoutListener {
+                 (callsAdapter.itemCount - 1).takeIf { it > 0 }?.let(messagesRv::smoothScrollToPosition)
+             }
+             val imm: InputMethodManager =
+                 activity!!.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+             //Find the currently focused view, so we can grab the correct window token from it.
+             //Find the currently focused view, so we can grab the correct window token from it.
+             var view = activity!!.currentFocus
+             //If no view currently has focus, create a new one, just so we can grab a window token from it
+             //If no view currently has focus, create a new one, just so we can grab a window token from it
+             if (view == null) {
+                 view = View(activity)
+             }
+             imm.hideSoftInputFromWindow(view.windowToken, 0)
+             messageInput.setText("")
+             callsList.add(category)
+             callsAdapter.notifyDataSetChanged()
+         }
+
+
+
         }
 
 

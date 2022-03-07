@@ -101,13 +101,13 @@ class FinalizedCallFrag : Fragment() {
         MyUseFulKotlin().closeLoading( alertDialog)
 
         callsList.clear()
-        var category = Call( "Advogados","Finalizado", R.drawable.ic_baseline_balance_24)
+        var category = Call( "Advogados","Aprovado", R.drawable.ic_baseline_balance_24)
         callsList.add(category)
-        category = Call( "Médicos","Finalizado", R.drawable.ic_baseline_medical_services_24)
+        category = Call( "Médicos","Aprovado", R.drawable.ic_baseline_medical_services_24)
         callsList.add(category)
-        category = Call( "Jornalistas","Finalizado", R.drawable.ic_microphone_)
+        category = Call( "Jornalistas","Aprovado", R.drawable.ic_microphone_)
         callsList.add(category)
-        category = Call( "Administradores","Finalizado", R.drawable.ic_noun_administrator_1046321)
+        category = Call( "Administradores","Aprovado", R.drawable.ic_noun_administrator_1046321)
         callsList.add(category)
 
 

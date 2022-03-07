@@ -97,6 +97,10 @@ class MainActivity : AppCompatActivity() {
             if (destination.id == R.id.profileFrag) {
                 supportActionBar?.setTitle("Meu Perfil")
             }
+            if (destination.id == R.id.vizualizeArchive) {
+                supportActionBar?.setTitle("Detalhe do Arquivo")
+            }
+
         }
 
 
