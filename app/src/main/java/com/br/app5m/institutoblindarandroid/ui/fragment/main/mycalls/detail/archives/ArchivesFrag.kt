@@ -21,10 +21,16 @@ import com.br.app5m.institutoblindarandroid.ui.adapter.Message_adapter
 import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.message.MessagesFrag
 import com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.message.MessagesViewModel
 import kotlinx.android.synthetic.main.archives_fragment.*
-import kotlinx.android.synthetic.main.messages_fragment.*
 import kotlinx.android.synthetic.main.messages_fragment.messagesRv
+import androidx.core.app.ActivityCompat.startActivityForResult
+
+import android.content.Intent
+import java.io.File
+
 
 class ArchivesFrag : Fragment() {
+    private val CHOOSE_FILE_REQUESTCODE = 8777
+    private val PICKFILE_RESULT_CODE = 8778
     private lateinit var alertDialog: AlertDialog
     private lateinit var builder: AlertDialog.Builder
 
@@ -52,15 +58,26 @@ class ArchivesFrag : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         builder = AlertDialog.Builder(requireContext())
         alertDialog = builder.create()
+
+
+        floatingActionButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "file/*"
+            startActivityForResult(intent, PICKFILE_RESULT_CODE)
+        }
+
+
         createLast_calls()
         configureLast_callsAdapter()
     }
     fun configureLast_callsAdapter(){
         callsAdapter = Files_adapter(callsList, object : RecyclerItemClickListener {
-            override fun onClickListenerLastCallsAdapter(call: Call) {
-                super.onClickListenerLastCallsAdapter(call)
 
-                findNavController().navigate(R.id.action_myCallsFrag_to_detailCallFrag)
+
+            override fun onClickListenerFileAdapter(mesage: Message) {
+                super.onClickListenerFileAdapter(mesage)
+
+                findNavController().navigate(R.id.action_detailCallFrag_to_vizualizeArchive)
 
             }
 

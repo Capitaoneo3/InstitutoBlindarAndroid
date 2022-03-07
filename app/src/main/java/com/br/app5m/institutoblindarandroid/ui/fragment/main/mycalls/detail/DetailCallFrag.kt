@@ -24,11 +24,7 @@ class DetailCallFrag : Fragment() {
     private lateinit var adapter: FragmentStateAdapter
 
 
-    override fun onResume() {
-        super.onResume()
-        configInitialViews()
 
-    }
 
 
 
@@ -40,6 +36,10 @@ class DetailCallFrag : Fragment() {
         return inflater.inflate(R.layout.detail_call_fragment, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        configInitialViews()
+    }
 
 
 
@@ -51,7 +51,7 @@ class DetailCallFrag : Fragment() {
 
 
 
-        adapter = ScreenSlidePagerAdapter(activity)
+        adapter = ScreenSlidePagerAdapter(requireActivity())
         adapter.notifyDataSetChanged()
         if (isAdded){
 

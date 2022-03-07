@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,13 +36,15 @@ class Files_adapter (private val messageList: List<Message>, val clickListener: 
     class FileHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val nameHe: TextView = itemView.findViewById(R.id.nameHe)
         val dateHe: TextView = itemView.findViewById(R.id.dateHe)
-        val fileRvHe: RecyclerView = itemView.findViewById(R.id.fileRvHe)
+        val fileNameHe: TextView = itemView.findViewById(R.id.fileNameHe)
+        val cardV_he: CardView = itemView.findViewById(R.id.cardV_he)
         val profile_imageHe: ImageView = itemView.findViewById(R.id.profile_imageHe)
         val HeFileLayout: ConstraintLayout = itemView.findViewById(R.id.HeFileLayout)
 
         val nameSelf: TextView = itemView.findViewById(R.id.nameSelf)
         val dateSelf: TextView = itemView.findViewById(R.id.dateSelf)
-        val fileRvSelf: RecyclerView = itemView.findViewById(R.id.fileRvSelf)
+        val filennameSelf: TextView = itemView.findViewById(R.id.filennameSelf)
+        val cardV_self: CardView = itemView.findViewById(R.id.cardV_self)
         val profile_imageSelf: ImageView = itemView.findViewById(R.id.profile_imageSelf)
         val SelfFileLayout: ConstraintLayout = itemView.findViewById(R.id.SelfFileLayout)
 
@@ -53,7 +57,6 @@ class Files_adapter (private val messageList: List<Message>, val clickListener: 
 
     override fun onBindViewHolder(fileHolder: FileHolder, position: Int) {
         val message = messageList[position]
-
 
         if (message.id == "0"){
 //            callsHolder.icon.setImageDrawable(ContextCompat.getDrawable(context,message.icon!!))
@@ -71,7 +74,8 @@ class Files_adapter (private val messageList: List<Message>, val clickListener: 
 
 
 
-        fileHolder.itemView.setOnClickListener { clickListener.onClickListenerFileAdapter(message) }
+        fileHolder.cardV_he.setOnClickListener { clickListener.onClickListenerFileAdapter(message) }
+        fileHolder.cardV_self.setOnClickListener { clickListener.onClickListenerFileAdapter(message) }
 
     }
 

@@ -1,281 +1,247 @@
 package com.br.app5m.institutoblindarandroid.helper
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class Preferences(context: Context?) /*{
+class Preferences @SuppressLint("CommitPrefEdits") constructor(context: Context) {
+    private val preferences: SharedPreferences
+    private val editor: SharedPreferences.Editor
 
-    *//**
-     * Preferences
-     *
-     * @author Android version: Wesley Costa
-     * @since Version 1.0.3
-     * @Created  06/2020 - 02/2021
-     *//*
-
-    private var preferences = context?.getSharedPreferences("high.preference", 0)
-    private var editor = preferences?.edit()
-
-    fun setUserData(user: User?) {
-        val data = Gson().toJson(user)
-        editor!!.putString("getUserData", data)
-        editor!!.commit()
+    operator fun set(key: String?, value: String?) {
+        editor.putString(key, value)
+        editor.commit()
     }
-    fun setPropostacomercialData(propostacomercial: Propostacomercial?) {
-        val data = Gson().toJson(propostacomercial)
-        editor!!.putString("getPropostacomercialData", data)
-        editor!!.commit()
-    }
-    fun setListItemCartData(list: List<ItemCart?>?) {
+   /* fun setListJogadorData(list: List<Jogador?>?) {
         val gson = Gson()
         val json = gson.toJson(list)
-        set("arrayItemCart", json)
+        set("arrayGoleadores", json)
+    }*/
+    fun set_messageSelf(str: String) {
+        val gson = Gson()
+        val json = gson.toJson(str)
+        set("messageSelf", json)
     }
-    fun getListItemCartData(): List<ItemCart?>? {
-        var arrayItems: List<ItemCart?>? = null
-        val serializedObject = preferences!!.getString("arrayItemCart", "")
+    fun clear_messageSelf() {
+        editor?.remove("messageSelf")
+        editor!!.commit()
+    }
+    fun get_messageSelf(): String? {
+        val srt: String
+        val gson = Gson()
+        val data = preferences!!.getString("messageSelf", "")
+        return if (data != null && data.isNotEmpty()) {
+            srt = gson.fromJson(data, String::class.java)
+            srt
+        } else null
+    }
+
+  /*  fun set_camp(liga: Liga?) {
+        val data = Gson().toJson(liga)
+        editor!!.putString("camp_new", data)
+        editor!!.commit()
+    }
+
+
+    fun get_camp(): Liga? {
+        val liga: Liga
+        val gson = Gson()
+        val data = preferences!!.getString("camp_new", "")
+        return if (data != null && data.isNotEmpty()) {
+            liga = gson.fromJson(data, Liga::class.java)
+            liga
+        } else null
+    }
+    fun clear_camp() {
+        editor?.remove("camp_new")
+        editor!!.commit()
+    }
+
+    fun getListJogadorData(): List<Jogador?>? {
+        var arrayItems: List<Jogador?>? = null
+        val serializedObject = preferences!!.getString("arrayGoleadores", "")
         if (serializedObject != null) {
             val gson = Gson()
-            val type = object : TypeToken<List<ItemCart?>?>() {}.type
-            arrayItems = gson.fromJson<List<ItemCart?>>(serializedObject, type)
+            val type = object : TypeToken<List<Jogador?>?>() {}.type
+            arrayItems = gson.fromJson<List<Jogador?>>(serializedObject, type)
         }
         return arrayItems
     }
-    fun clearListItemCartData() {
-        editor?.remove("arrayItemCart")
+    fun clearListJogadorData() {
+        editor?.remove("arrayGoleadores")
         editor!!.commit()
     }
-  *//*  fun setItemCartData(itemCartArray: ItemCartArray?) {
-        val data = Gson().toJson(itemCartArray)
-        editor!!.putString("ItemCartData", data)
-        editor!!.commit()
-    }*//*
-
-    fun setRequirimentsDetailData(requirimentsDetail: RequirimentsDetail?) {
-        val data = Gson().toJson(requirimentsDetail)
-        editor!!.putString("RequirimentsDetailData", data)
-        editor!!.commit()
-    }
-    fun setProposalDetailData(proposalDetail: ProposalDetail?) {
-        val data = Gson().toJson(proposalDetail)
-        editor!!.putString("ProposalDetailData", data)
-        editor!!.commit()
-    }
-    fun setProposalListAllData(proposalListAll: ProposalListAll?) {
-        val data = Gson().toJson(proposalListAll)
-        editor!!.putString("ProposalListAll", data)
+    fun setUserLocation(location: LocationUser?) {
+        val dados = Gson().toJson(location)
+        editor!!.putString("location", dados)
         editor!!.commit()
     }
 
-    fun setRequirimentsListAllData(requirimentsListAll: RequirimentsListAll?) {
-        val data = Gson().toJson(requirimentsListAll)
-        editor!!.putString("RequirimentsListAllData", data)
+    fun setUserLocationAux(num: String) {
+        editor!!.putString("locationAux", num)
         editor!!.commit()
     }
-    fun setBillssListAllData(contasReceberAll: ContasReceberAll?) {
-        val data = Gson().toJson(contasReceberAll)
-        editor!!.putString("ContasReceberAllListAllData", data)
-        editor!!.commit()
+    fun getUserLocationAux(): String? {
+        val data = preferences.getString("locationAux", "")
+        return data
     }
 
-    fun setProductListAllData(productListAll: ProductListAll?) {
-        val data = Gson().toJson(productListAll)
-        editor!!.putString("ProductPostData", data)
+    fun clearUserLocationAux() {
+        editor.remove("locationAux").commit()
+    }
+    fun setIntroAux(num: String) {
+        editor!!.putString("IntroAux", num)
         editor!!.commit()
     }
-    fun setProductDetailData(productDetail: ProductDetail?) {
-        val data = Gson().toJson(productDetail)
-        editor!!.putString("ProductDetailData", data)
+    fun getIntroAux(): String? {
+        val data = preferences.getString("IntroAux", "")
+        return data
+    }
+    fun clearIntroAux() {
+        editor.remove("IntroAux").commit()
+    }
+    fun clearUserLocation(){
+        editor?.remove("location")
         editor!!.commit()
     }
-    fun setCategoryData(category: Category?) {
-        val data = Gson().toJson(category)
-        editor!!.putString("CategoryData", data)
-        editor!!.commit()
-    }
-
-    operator fun set(key: String?, value: String?) {
-        editor!!.putString(key, value)
-        editor!!.commit()
-    }
-   *//* fun getItemCartData(): ItemCartArray? {
-        val product: ItemCartArray
+    fun getUserLocation(): LocationUser? {
+        val location: LocationUser
         val gson = Gson()
-        val data = preferences!!.getString("ItemCartData", "")
-        return if (data != null && data.isNotEmpty()) {
-            product = gson.fromJson(data, ItemCartArray::class.java)
-            product
-        } else null
-    }*//*
-
-    fun getContasReceberAll(): ContasReceberAll? {
-        val product: ContasReceberAll
-        val gson = Gson()
-        val data = preferences!!.getString("ProductDetailData", "")
-        return if (data != null && data.isNotEmpty()) {
-            product = gson.fromJson(data, ContasReceberAll::class.java)
-            product
+        val data = preferences!!.getString("location", "")
+        return if (data!!.isNotEmpty()) {
+            location = gson.fromJson(data, LocationUser::class.java)
+            location
         } else null
     }
-    fun getProposalListAllData(): ProposalListAll? {
-        val product: ProposalListAll
-        val gson = Gson()
-        val data = preferences!!.getString("ProposalListAllData", "")
-        return if (data != null && data.isNotEmpty()) {
-            product = gson.fromJson(data, ProposalListAll::class.java)
-            product
-        } else null
+    var userData: User
+        get() {
+            val user: User
+            val gson = Gson()
+            val data = preferences.getString("getData", "")
+            return if (!data!!.isEmpty()) {
+                user = gson.fromJson(data, User::class.java)
+                user
+            } else User()
+        }
+        set(user) {
+            val dados = Gson().toJson(user)
+            editor.putString("getData", dados)
+            editor.commit()
+        }
+    var timeData: Time
+        get() {
+            val time: Time
+            val gson = Gson()
+            val data = preferences.getString("getDataTime", "")
+            return if (!data!!.isEmpty()) {
+                time = gson.fromJson(data, Time::class.java)
+                time
+            } else Time()
+        }
+        set(time) {
+            val dados = Gson().toJson(time)
+            editor.putString("getDataTime", dados)
+            editor.commit()
+        }
+
+    //Recupera a escalação por objeto
+    fun setEscalacao(escalacao: Escalacoes?, id_time: String) {
+        val dados = Gson().toJson(escalacao)
+        editor.putString("escalacao$id_time", dados)
+        editor.commit()
     }
-   fun getProposalDetailData(): ProposalDetail? {
-       val product: ProposalDetail
-       val gson = Gson()
-       val data = preferences!!.getString("ProposalDetailData", "")
-       return if (data != null && data.isNotEmpty()) {
-           product = gson.fromJson(data, ProposalDetail::class.java)
-           product
-       } else null
-   }
-   fun getPropostacomercialData(): Propostacomercial? {
-       val product: Propostacomercial
-       val gson = Gson()
-       val data = preferences!!.getString("getPropostacomercialData", "")
-       return if (data != null && data.isNotEmpty()) {
-           product = gson.fromJson(data, Propostacomercial::class.java)
-           product
-       } else null
-   }
-    fun getRequirimentsDetailData(): RequirimentsDetail? {
-        val product: RequirimentsDetail
+
+    fun getEscalacao(id_time: String): Escalacoes? {
+        val escalacao: Escalacoes
         val gson = Gson()
-        val data = preferences!!.getString("RequirimentsDetailData", "")
-        return if (data != null && data.isNotEmpty()) {
-            product = gson.fromJson(data, RequirimentsDetail::class.java)
-            product
-        } else null
-    }
-    fun getRequirimentsListAllData(): RequirimentsListAll? {
-        val product: RequirimentsListAll
-        val gson = Gson()
-        val data = preferences!!.getString("RequirimentsListAllData", "")
-        return if (data != null && data.isNotEmpty()) {
-            product = gson.fromJson(data, RequirimentsListAll::class.java)
-            product
+        val data = preferences.getString("escalacao$id_time", "")
+        return if (!data!!.isEmpty()) {
+            escalacao = gson.fromJson(data, Escalacoes::class.java)
+            escalacao
         } else null
     }
 
-    fun getProductDetailData(): ProductDetail? {
-        val product: ProductDetail
-        val gson = Gson()
-        val data = preferences!!.getString("ProductDetailData", "")
-        return if (data != null && data.isNotEmpty()) {
-            product = gson.fromJson(data, ProductDetail::class.java)
-            product
-        } else null
-    }
-    fun getProductListAllData(): ProductListAll? {
-        val product: ProductListAll
-        val gson = Gson()
-        val data = preferences!!.getString("ProductPostData", "")
-        return if (data != null && data.isNotEmpty()) {
-            product = gson.fromJson(data, ProductListAll::class.java)
-            product
-        } else null
+    fun clearEscala(id_time: String) {
+        editor.remove("escalacao$id_time").commit()
     }
 
-    fun getUserData(): User? {
-        val user: User
-        val gson = Gson()
-        val data = preferences!!.getString("getUserData", "")
-        return if (data != null && data.isNotEmpty()) {
-            user = gson.fromJson(data, User::class.java)
-            user
-        } else null
-    }
-    fun getCategoryData(): Category? {
-        val category: Category
-        val gson = Gson()
-        val data = preferences!!.getString("CategoryData", "")
-        return if (data != null && data.isNotEmpty()) {
-            category = gson.fromJson(data, Category::class.java)
-            category
-        } else null
+    fun clearUserData() {
+        editor.remove("getData").commit()
+        editor.remove("login").commit()
+        editor.remove("token").commit()
+        editor.remove("pastas").commit()
     }
 
+    var login: Boolean
+        get() = preferences.getBoolean("login", false)
+        set(login) {
+            editor.putBoolean("login", login)
+            editor.commit()
+        }
+    var tenhoTimeEscalado: Boolean
+        get() = preferences.getBoolean("tenhoTimeEscalado", false)
+        set(tenhoTimeEscalado) {
+            editor.putBoolean("tenhoTimeEscalado", tenhoTimeEscalado)
+            editor.commit()
+        }
+    fun clearTenhoTimeEscalado() {
+        editor.remove("tenhoTimeEscalado").commit()
 
-    fun setLogin(enable: Boolean){
-        editor!!.putBoolean("login", enable)
+    }
+    //key == id_time
+    fun setEscalado(key: String?, valido: Boolean) {
+        editor.putBoolean(key, valido)
+        editor.commit()
+    }
+
+    //key == id_time
+    //Recupera a escalação por boolean
+    fun getEscalado(key: String?): Boolean {
+        return preferences.getBoolean(key, false)
+    }
+
+    fun setCodRodada(cod: String?, id_time: String) {
+        editor.putString("rodada$id_time", cod)
+        editor.commit()
+    }
+
+    fun getCodRodada(id_time: String): String? {
+        return preferences.getString("rodada$id_time", "")
+    }
+
+    val type: String?
+        get() = preferences.getString("type", "")
+
+    fun save_fcm(fcm: String?) {
+        editor.putString("fcm", fcm)
+        editor.commit()
+    }
+
+    fun fcm(): String? {
+        return preferences.getString("fcm", "")
+    }
+
+    fun save_first_user(id: String?) {
+        editor.putString("user", id)
+        editor.commit()
+    }
+
+    fun first_user(): String? {
+        return preferences.getString("user", "0")
+    }
+
+    fun getInstanceTokenFcm(): String {
+        return preferences!!.getString("token", "")!!
+    }
+    fun saveInstanceTokenFcm(key: String?, value: String) {
+        editor?.putString(key, value)
         editor!!.commit()
+    }*/
+
+    init {
+        preferences = context.getSharedPreferences("note.preference", 0)
+        editor = preferences.edit()
     }
-
-
-    fun getLogin(): Boolean{
-        return preferences?.getBoolean("login", false)!!
-    }
-  *//*  fun clearItemCartData(){
-        editor!!.remove("ItemCartData")
-        editor!!.commit()
-    }
-*//*
-
-    fun clearProposalListAllData(){
-        editor!!.remove("ProposalListAllData")
-        editor!!.commit()
-    }
-
-    fun clearRequirimentsDetailData(){
-        editor!!.remove("RequirimentsDetailData")
-        editor!!.commit()
-    }
-    fun clearReceberAllListAllData(){
-        editor!!.remove("ContasReceberAllList")
-        editor!!.commit()
-    }
-    fun clearRequirimentsListAllData(){
-        editor!!.remove("RequirimentsListAllData")
-        editor!!.commit()
-    }
-    fun clearProposalDetailData(){
-        editor!!.remove("ProposalDetailData")
-        editor!!.commit()
-    }
-    fun clearProductDetailData(){
-        editor!!.remove("ProductDetailData")
-        editor!!.commit()
-    }
-
-    fun clearProductListAllData(){
-        editor!!.remove("ProductPostData")
-        editor!!.commit()
-    }
-    fun clearPropostacomercialData(){
-        editor!!.remove("getPropostacomercialData")
-        editor!!.commit()
-    }
-
-    fun clearUserData(){
-        editor!!.remove("getUserData")
-        editor!!.remove("login")
-
-        editor!!.commit()
-    }
-    fun clearCategoryData(){
-        editor!!.remove("CategoryData")
-        editor!!.commit()
-    }
-
-
-
-    fun firstUser(): String? {
-        return preferences!!.getString("user", "0")
-    }
-
-
-
-
-
-
-
-
-
-}*/
+}

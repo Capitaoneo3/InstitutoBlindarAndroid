@@ -5,7 +5,17 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 
-class Message(nome: String,id: String) {
+class Message {
+    constructor(nome: String, id: String) {
+        this.id = id
+        this.nome = nome
+    }
+
+    constructor(nome: String, id: String,text:String) {
+        this.id = id
+        this.nome = nome
+        this.text = text
+    }
     val status:  String? = null
 
     @SerializedName("image")
@@ -14,11 +24,11 @@ class Message(nome: String,id: String) {
 
     @SerializedName("id")
     @Expose
-    var id: String? = id
+    var id: String?
 
     @SerializedName("nome")
     @Expose
-    var nome:String =  nome
+    var nome:String
 
     @SerializedName("data")
     @Expose

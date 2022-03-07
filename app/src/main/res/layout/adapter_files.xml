@@ -12,7 +12,7 @@
         android:id="@+id/HeFileLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -50,7 +50,6 @@
             android:paddingTop="4dp"
             android:paddingEnd="4dp"
             android:paddingBottom="4dp"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/personDataHeLayout"
@@ -96,6 +95,7 @@
                 </LinearLayout>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardV_he"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="5dp"
@@ -122,33 +122,33 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView11"
+                                android:id="@+id/arquiveSizeHe"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="54KB"
                                 android:textSize="10sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/textView10"
-                                app:layout_constraintStart_toEndOf="@+id/imageView8"
-                                app:layout_constraintTop_toTopOf="@+id/imageView8" />
+                                app:layout_constraintBottom_toBottomOf="@+id/fileImageHe"
+                                app:layout_constraintStart_toStartOf="@+id/fileNameHe"
+                                app:layout_constraintTop_toTopOf="@+id/fileImageHe" />
 
                             <TextView
-                                android:id="@+id/textView10"
+                                android:id="@+id/fileNameHe"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:text="Nome_do_arquivo"
                                 android:textSize="10sp"
-                                app:layout_constraintBottom_toTopOf="@+id/textView11"
-                                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                                app:layout_constraintBottom_toTopOf="@+id/arquiveSizeHe"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toEndOf="@+id/fileImageHe"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
-                                android:id="@+id/imageView8"
+                                android:id="@+id/fileImageHe"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_margin="2dp"
-                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/ic_baseline_picture_as_pdf_24" />
@@ -232,6 +232,7 @@
                 </LinearLayout>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardV_self"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="5dp"
@@ -258,33 +259,33 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView11"
+                                android:id="@+id/fileSizeSelf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="54KB"
                                 android:textSize="10sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/textView10"
-                                app:layout_constraintStart_toEndOf="@+id/imageView8"
-                                app:layout_constraintTop_toTopOf="@+id/imageView8" />
+                                app:layout_constraintStart_toStartOf="@+id/filennameSelf"
+                                app:layout_constraintTop_toTopOf="@+id/fileImageSelf" />
 
                             <TextView
-                                android:id="@+id/textView10"
+                                android:id="@+id/filennameSelf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:text="Nome_do_arquivo"
                                 android:textSize="10sp"
-                                app:layout_constraintBottom_toTopOf="@+id/textView11"
-                                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                                app:layout_constraintBottom_toTopOf="@+id/fileSizeSelf"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toEndOf="@+id/fileImageSelf"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
-                                android:id="@+id/imageView8"
+                                android:id="@+id/fileImageSelf"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_margin="2dp"
-                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/ic_baseline_picture_as_pdf_24" />

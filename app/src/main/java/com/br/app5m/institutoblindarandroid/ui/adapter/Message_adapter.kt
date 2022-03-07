@@ -51,7 +51,9 @@ class Message_adapter (private val messageList: List<Message>, val clickListener
             messageHolder.heMessageLayout.visibility = View.GONE
             messageHolder.SelfMessageLayout.visibility = View.VISIBLE
            messageHolder.nameSelf.text = message.nome.toString()
-
+            if (message.text != null && message.text != "" ){
+                messageHolder.selfText.text = message.text.toString()
+            }
 
         }else{
             messageHolder.heMessageLayout.visibility = View.VISIBLE

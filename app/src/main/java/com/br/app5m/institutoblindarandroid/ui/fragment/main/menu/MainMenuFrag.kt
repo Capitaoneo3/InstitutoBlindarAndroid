@@ -1,6 +1,7 @@
 package com.br.app5m.institutoblindarandroid.ui.fragment.main.menu
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,6 +26,12 @@ class MainMenuFrag : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        blogBt.setOnClickListener {
+            val url = "https://institutoblindar.com.br/"
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(url)
+            startActivity(i)
+        }
         profileCl.setOnClickListener {
             findNavController().navigate(R.id.action_mainMenuFrag_to_profileFrag)
         }
