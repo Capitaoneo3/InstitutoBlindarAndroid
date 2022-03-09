@@ -33,7 +33,7 @@
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_files.xml" value="0.67" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_files_chield.xml" value="0.5" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_message.xml" value="0.33" />
-        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_ultimos_5_chamados.xml" value="0.6780923994038748" />
+        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_ultimos_5_chamados.xml" value="0.75" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/app_bar_main.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/archives_fragment.xml" value="0.3015625" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/audios_fragment.xml" value="0.315625" />
@@ -52,7 +52,7 @@
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/in_progress_call_fragment.xml" value="0.31979166666666664" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/loading.xml" value="0.31979166666666664" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/messages_fragment.xml" value="0.22" />
-        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/new_call_fragment.xml" value="0.24719101123595505" />
+        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/new_call_fragment.xml" value="0.25" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/notification.xml" value="0.2898148148148148" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/pending_call_fragment.xml" value="0.31979166666666664" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/profile_fragment.xml" value="0.33" />
@@ -61,6 +61,8 @@
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/vizualize_archive_fragment.xml" value="0.3151041666666667" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/actionbar_menu_item.xml" value="0.2898148148148148" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/bottom_nav_menu.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>

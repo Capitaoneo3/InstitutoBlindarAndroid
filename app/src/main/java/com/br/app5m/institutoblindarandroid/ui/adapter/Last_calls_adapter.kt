@@ -28,7 +28,7 @@ class Last_calls_adapter (private val callsList: List<Call>, val clickListener: 
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LastCallsHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewnameType: Int): LastCallsHolder {
 
         return LastCallsHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_ultimos_5_chamados, parent, false))
     }
@@ -36,12 +36,12 @@ class Last_calls_adapter (private val callsList: List<Call>, val clickListener: 
     override fun onBindViewHolder(callsHolder: LastCallsHolder, position: Int) {
         val call = callsList[position]
 
-        callsHolder.icon.setImageDrawable(ContextCompat.getDrawable(context,call.icon!!))
+//        callsHolder.icon.setImageDrawable(ContextCompat.getDrawable(context,call.icon!!))
 
 
 
 
-        callsHolder.name.text = call.nome.toString()
+//        callsHolder.name.text = call.nome.toString()
         callsHolder.status.text = call.status.toString()
         if (call.status == "Pendente"){
             callsHolder.status.setTextColor(ContextCompat.getColor(context,R.color.orange400))
