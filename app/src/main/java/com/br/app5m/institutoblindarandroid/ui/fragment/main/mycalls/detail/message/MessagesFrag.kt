@@ -144,6 +144,7 @@ class MessagesFrag : Fragment() {
     }
 
     fun createLast_calls() {
+
   /*      MyUseFulKotlin().openLoading(requireContext(), alertDialog)
         MyUseFulKotlin().closeLoading( alertDialog)*/
 

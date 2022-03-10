@@ -12,6 +12,11 @@
         android:title="Meus Chamados" />
 
     <item
+        android:id="@+id/formsFrag22"
+        android:icon="@drawable/ic_baseline_create_24"
+        android:title="Formulários" />
+
+    <item
         android:id="@+id/mainMenuFrag"
         android:icon="@drawable/ic_baseline_menu_24"
         android:title="Menu" />

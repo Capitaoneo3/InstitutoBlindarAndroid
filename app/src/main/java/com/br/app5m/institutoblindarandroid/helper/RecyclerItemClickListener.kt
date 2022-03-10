@@ -24,4 +24,7 @@ interface RecyclerItemClickListener {
     fun onClickListenerFileAdapter(message: Message){
         //optional body
     }
+    fun onClickListenerFormsAdapter(message: Message){
+        //optional body
+    }
 }

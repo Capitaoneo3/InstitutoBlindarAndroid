@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.main_nav_host) //Initialising navController
 
         appBarConfiguration = AppBarConfiguration.Builder( R.id.myCallsFrag,
-            R.id.mainMenuFrag, R.id.navigation_home) //Pass the ids of fragments from nav_graph which you d'ont want to show back button in toolbar
+            R.id.mainMenuFrag, R.id.navigation_home,R.id.formsFrag22) //Pass the ids of fragments from nav_graph which you d'ont want to show back button in toolbar
             .build()
         setSupportActionBar(binding.mainToolbar) //Set toolbar
 
@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 menuItemNotify.setVisible(false)
             }
+
             if (destination.id == R.id.detailCallFrag) {
                 supportActionBar?.setTitle("Detalhes do chamado")
             }
@@ -151,8 +152,9 @@ class MainActivity : AppCompatActivity() {
                     showBothNavigation()
                 }
                 R.id.myCallsFrag ->{
-                    supportActionBar?.setDisplayShowTitleEnabled(false)
-                    showActionBarLogo(this, true)
+                    supportActionBar?.setDisplayShowTitleEnabled(true)
+                    showActionBarLogo(this, false)
+                    supportActionBar?.setTitle("Meus Chamados")
 
                     showBothNavigation()
 
@@ -160,6 +162,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.mainMenuFrag ->{
                     supportActionBar?.setDisplayShowTitleEnabled(false)
                     showActionBarLogo(this, true)
+
+                    showBothNavigation()
+                }
+                R.id.formsFrag22 ->{
+                    supportActionBar?.setDisplayShowTitleEnabled(true)
+                    showActionBarLogo(this, false)
+                    supportActionBar?.setTitle("Formulários")
 
                     showBothNavigation()
                 }
