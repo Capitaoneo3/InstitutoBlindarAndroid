@@ -16,6 +16,11 @@ class Message {
         this.nome = nome
         this.text = text
     }
+    constructor() {
+
+    }
+
+
     val status:  String? = null
 
     @SerializedName("image")
@@ -24,17 +29,17 @@ class Message {
 
     @SerializedName("id")
     @Expose
-    var id: String?
+    var id: String? = null
 
     @SerializedName("nome")
     @Expose
-    var nome:String
+    var nome: String? = null
 
     @SerializedName("data")
     @Expose
-    var data:String? = null
+    var data: String? = null
 
     @SerializedName("text")
     @Expose
-    var text:String? =  null
+    var text: String? =  null
 }

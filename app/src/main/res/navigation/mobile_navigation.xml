@@ -39,7 +39,11 @@
         android:id="@+id/newCallFrag"
         android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.home.newcall.NewCallFrag"
         android:label="new_call_fragment"
-        tools:layout="@layout/new_call_fragment" />
+        tools:layout="@layout/new_call_fragment" >
+        <action
+            android:id="@+id/action_newCallFrag_to_sendingAudioFragment"
+            app:destination="@id/sendingAudioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailCallFrag"
         android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.DetailCallFrag"
@@ -78,7 +82,7 @@
         tools:layout="@layout/messages_fragment" />
     <fragment
         android:id="@+id/sendingAudioFragment"
-        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.audios.sendingaudio.SendingAudioFragment"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.others.sendingaudio.SendingAudioFragment"
         android:label="sending_audio_fragment"
         tools:layout="@layout/sending_audio_fragment" />
     <fragment

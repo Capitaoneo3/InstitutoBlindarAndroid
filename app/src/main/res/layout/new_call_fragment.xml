@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
 
@@ -9,7 +9,7 @@
     android:fillViewport="true"
     tools:context=".ui.fragment.main.home.newcall.NewCallFrag">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -26,13 +26,13 @@
                 android:id="@+id/linearLayout6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
                 android:orientation="vertical"
                 android:paddingStart="24dp"
                 android:paddingTop="24dp"
                 android:paddingEnd="24dp"
                 android:paddingBottom="24dp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintBottom_toTopOf="@+id/sendButton"
                 fab:layout_constraintBottom_toBottomOf="parent"
                 fab:layout_constraintEnd_toEndOf="parent"
                 fab:layout_constraintStart_toStartOf="parent"
@@ -138,7 +138,7 @@
                         android:padding="1dp">
 
                         <TextView
-                            android:id="@+id/audiosText"
+                            android:id="@+id/filesText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -186,6 +186,7 @@
                                     android:paddingEnd="16dp"
                                     android:text="Áudios"
                                     android:textColor="@color/textColor2"
+                                    android:visibility="gone"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toStartOf="@+id/imageView8"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +197,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="@+id/audiosText"
+                                    app:layout_constraintEnd_toStartOf="@+id/imageView8"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -205,11 +206,11 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
-                                    android:src="@drawable/ic_baseline_mic_none_24"
-                                    android:tint="@color/colorPrimaryDark"
+                                    android:src="@drawable/ic_baseline_music_note_24"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/colorPrimaryDark" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
 
@@ -220,43 +221,78 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayout7"
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/fabMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginBottom="10dp"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="@dimen/margin_size3"
+                android:theme="@style/FloatingButton"
+                android:visibility="visible"
+
                 app:layout_constraintBottom_toTopOf="@+id/sendButton"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shape_body_items1_border"
-                    android:backgroundTint="@color/colorPrimaryDark"
-                    android:padding="4dp"
-                    android:text="Adicionar"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                app:menu_colorNormal="@color/colorPrimary"
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton3"
+
+                app:menu_fab_show_animation="@anim/fab_slide_out_to_right"
+                app:menu_fab_size="mini"
+                app:menu_icon="@drawable/fab_add">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fabFotos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="12dp"
-                    android:clickable="true"
-                    android:src="@drawable/ic_baseline_add_24"
-                    app:backgroundTint="@color/colorPrimaryDark"
-                    app:fabSize="normal"
-                    app:fab_label="Adicionar"
-                    app:tint="@color/white" />
+                    android:src="@drawable/ic_baseline_photo_camera_24"
+                    android:visibility="visible"
+                    app:tint="@color/colorPrimaryDark"
+                    app:fab_colorNormal="@color/colorPrimary"
+                    app:fab_colorPressed="@color/colorPrimary"
+                    app:fab_colorRipple="#FFFFFF"
+                    app:fab_progress_color="@color/colorPrimary"
+                    fab:fab_label="Fotos"
+                    fab:fab_size="mini" />
 
-            </LinearLayout>
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fabArquivos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_attach_file_24"
+                    android:visibility="visible"
+                    app:fab_colorNormal="@color/colorPrimary"
+                    app:fab_colorPressed="@color/colorPrimary"
+                    app:fab_colorRipple="#FFFFFF"
+                    app:fab_progress_color="@color/colorPrimary"
+                    fab:fab_label="Arquivos"
+                    fab:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fabGravador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_mic_none_24"
+                    android:visibility="visible"
+                    app:fab_colorNormal="@color/colorPrimary"
+                    fab:fab_label="Gravador"
+                    fab:fab_size="mini" />
+
+            </com.github.clans.fab.FloatingActionMenu>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/validarEscalacaoFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="@dimen/margin_size3"
+                android:backgroundTint="@color/colorPrimary"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_baseline_send_24"
+                android:theme="@style/FloatingButton"
+                android:visibility="gone"
+                app:fabSize="mini"
+                tools:layout_editor_absoluteX="226dp"
+                tools:layout_editor_absoluteY="515dp" />
 
             <Button
                 android:id="@+id/sendButton"
@@ -265,7 +301,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="56dp"
+                android:layout_marginBottom="24dp"
                 android:background="@drawable/button_rounded_filled"
                 android:paddingLeft="60dp"
                 android:paddingRight="24dp"
@@ -281,7 +317,7 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>

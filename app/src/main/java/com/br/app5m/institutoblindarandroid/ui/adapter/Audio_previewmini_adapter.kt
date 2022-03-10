@@ -4,17 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.br.app5m.institutoblindarandroid.R
 import com.br.app5m.institutoblindarandroid.helper.RecyclerItemClickListener
 import com.br.app5m.institutoblindarandroid.model.Message
-import rm.com.audiowave.AudioWaveView
 
-class Files_chield_adapter (private val messageList: List<Message>, val clickListener: RecyclerItemClickListener, context: Context):
-    RecyclerView.Adapter<Files_chield_adapter.AudioHolder>() {
+class Audio_previewmini_adapter (private val messageList: List<Message>, val clickListener: RecyclerItemClickListener, context: Context):
+    RecyclerView.Adapter<Audio_previewmini_adapter.AudioHolder>() {
 
     val context = context
     private val viewPool = RecyclerView.RecycledViewPool()
@@ -32,7 +28,7 @@ class Files_chield_adapter (private val messageList: List<Message>, val clickLis
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AudioHolder {
 
-        return AudioHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_files_chield, parent, false))
+        return AudioHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_audiopreview, parent, false))
     }
 
     override fun onBindViewHolder(audioHolder: AudioHolder, position: Int) {
@@ -58,7 +54,7 @@ class Files_chield_adapter (private val messageList: List<Message>, val clickLis
 
 
 
-        audioHolder.itemView.setOnClickListener { clickListener.onClickListenerFileChieldAdapter(message) }
+        audioHolder.itemView.setOnClickListener { clickListener.onClickListenerAudioPreviewAdapter(message) }
 
     }
 

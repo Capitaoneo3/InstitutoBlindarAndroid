@@ -1,4 +1,4 @@
-package com.br.app5m.institutoblindarandroid.ui.fragment.main.mycalls.detail.audios.sendingaudio
+package com.br.app5m.institutoblindarandroid.ui.fragment.others.sendingaudio
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -10,24 +10,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.br.app5m.institutoblindarandroid.R
-import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Build
 
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.sending_audio_fragment.*
-import android.os.Environment
-import android.os.Handler
 import android.util.Log
 import android.view.ViewTreeObserver
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.navigation.fragment.findNavController
-import com.br.app5m.institutoblindarandroid.MainActivity
 import com.tyorikan.voicerecordingvisualizer.RecordingSampler
-import com.tyorikan.voicerecordingvisualizer.VisualizerView
-import android.widget.TextView
 import android.os.CountDownTimer
 
 
@@ -175,7 +169,10 @@ class SendingAudioFragment : Fragment(),
 
             }
             override fun onFinish() {
-                recordingSampler?.stopRecording()
+                if (isAdded){
+
+                    recordingSampler?.stopRecording()
+                }
 
             }
         }
