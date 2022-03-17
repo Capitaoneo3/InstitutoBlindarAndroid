@@ -50,10 +50,10 @@ class NewCallFrag : Fragment() {
 
     }
     fun clicks(){
-/*   sendButton.setOnClickListener {
+   sendButton.setOnClickListener {
             findNavController().navigateUp()
 
-        }*/
+        }
         fabFotos.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "file/*"

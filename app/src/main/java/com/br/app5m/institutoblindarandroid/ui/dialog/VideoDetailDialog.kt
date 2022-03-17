@@ -2,6 +2,7 @@ package com.br.app5m.institutoblindarandroid.ui.dialog
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -44,12 +45,7 @@ import java.net.URL
 import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
 import cn.jzvd.Jzvd
-
-
-
-
-
-
+import com.br.app5m.institutoblindarandroid.ui.activity.VideoFullScreenActivity
 
 
 class VideoDetailDialog(context2: Context) : DialogFragment() {
@@ -93,6 +89,8 @@ class VideoDetailDialog(context2: Context) : DialogFragment() {
 
         }*/
         jzvdStd.fullscreenButton.setOnClickListener {
+            val intent = Intent (requireContext(), VideoFullScreenActivity::class.java)
+            requireContext().startActivity(intent)
         }
         jzvdStd.startVideo()
   /*      jzvdStd.setScreenFullscreen()
