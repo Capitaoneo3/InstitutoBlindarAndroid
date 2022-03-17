@@ -1,4 +1,4 @@
-package com.br.app5m.institutoblindarandroid.ui.fragment.main.forms
+package com.br.app5m.institutoblindarandroid.ui.fragment.main.formsandvideos.forms
 
 import androidx.lifecycle.ViewModel
 

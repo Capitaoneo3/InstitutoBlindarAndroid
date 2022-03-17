@@ -148,7 +148,7 @@ class SendingAudioFragment : Fragment(),
 
                 } else {
                     Log.d("tchurusbango", "permission denied by user")
-                    Toast.makeText(requireContext(), "asdasd", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(requireContext(), "asdasd", Toast.LENGTH_SHORT).show()
 
                 }
                 return

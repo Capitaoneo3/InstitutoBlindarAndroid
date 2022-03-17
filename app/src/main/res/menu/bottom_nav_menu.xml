@@ -6,15 +6,15 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
+
+    <item
+        android:id="@+id/formsAndVideosFragment"
+        android:icon="@drawable/ic_baseline_create_24"
+        android:title="Formulários" />
     <item
         android:id="@+id/myCallsFrag"
         android:icon="@drawable/ic_baseline_announcement_24"
         android:title="Meus Chamados" />
-
-    <item
-        android:id="@+id/formsFrag22"
-        android:icon="@drawable/ic_baseline_create_24"
-        android:title="Formulários" />
 
     <item
         android:id="@+id/mainMenuFrag"

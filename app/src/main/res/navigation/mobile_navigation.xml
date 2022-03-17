@@ -96,9 +96,9 @@
         android:label="vizualize_archive_fragment"
         tools:layout="@layout/vizualize_archive_fragment" />
     <fragment
-        android:id="@+id/formsFrag22"
-        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.forms.FormsFrag2"
-        android:label="forms_fragment"
-        tools:layout="@layout/forms_fragment" />
+        android:id="@+id/formsAndVideosFragment"
+        android:name="com.br.app5m.institutoblindarandroid.ui.fragment.main.formsandvideos.FormsAndVideosFragment"
+        android:label="forms_and_videos_fragment"
+        tools:layout="@layout/forms_and_videos_fragment" />
 
 </navigation>

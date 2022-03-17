@@ -38,6 +38,8 @@ import android.app.Activity
 import android.widget.Toast
 import com.squareup.picasso.Picasso.LoadedFrom
 import java.lang.Exception
+import cn.jzvd.Jzvd
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -55,9 +57,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navController = findNavController(R.id.main_nav_host) //Initialising navController
-
         appBarConfiguration = AppBarConfiguration.Builder( R.id.myCallsFrag,
-            R.id.mainMenuFrag, R.id.navigation_home,R.id.formsFrag22) //Pass the ids of fragments from nav_graph which you d'ont want to show back button in toolbar
+            R.id.mainMenuFrag, R.id.navigation_home,R.id.formsAndVideosFragment) //Pass the ids of fragments from nav_graph which you d'ont want to show back button in toolbar
             .build()
         setSupportActionBar(binding.mainToolbar) //Set toolbar
 
@@ -85,6 +86,12 @@ class MainActivity : AppCompatActivity() {
             } else {
                 menuItemNotify.setVisible(false)
             }
+            if (destination.id == R.id.formsAndVideosFragment || destination.id == R.id.myCallsFrag ) {
+                main_appbar.visibility = View.GONE
+            } else {
+                main_appbar.visibility = View.VISIBLE
+            }
+
 
             if (destination.id == R.id.detailCallFrag) {
                 supportActionBar?.setTitle("Detalhes do chamado")
@@ -165,7 +172,7 @@ class MainActivity : AppCompatActivity() {
 
                     showBothNavigation()
                 }
-                R.id.formsFrag22 ->{
+                R.id.formsAndVideosFragment ->{
                     supportActionBar?.setDisplayShowTitleEnabled(true)
                     showActionBarLogo(this, false)
                     supportActionBar?.setTitle("Formulários")
@@ -334,16 +341,15 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-/*    override fun onBackPressed() {
-
-        when { //If drawer layout is open close that on back pressed
-
-
-            }
-            else -> {
-                super.onBackPressed() //If drawer is already in closed condition then go back
-            }
+    override fun onBackPressed() {
+        if (Jzvd.backPress()) {
+            return
         }
-    }*/
+        super.onBackPressed()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Jzvd.releaseAllVideos()
+    }
 }

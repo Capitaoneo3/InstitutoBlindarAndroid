@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/ic__807121_document_docx_extension_file_icon.xml" value="0.3482051282051282" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/activity_main.xml" value="0.2758152173913043" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/activity_video_full_screen.xml" value="0.1983695652173913" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_forms.xml" value="0.286231884057971" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_videos.xml" value="0.5" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/audios_fragment.xml" value="0.3375" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/dialog_audio_preview_detail.xml" value="0.1641337386018237" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/dialog_video_detail.xml" value="0.33" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/forms_and_videos_fragment.xml" value="0.1641337386018237" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/forms_fragment.xml" value="0.286231884057971" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/fragment_my_calls.xml" value="0.286231884057971" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/videos_fragment.xml" value="0.286231884057971" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/actionbar_menu_item.xml" value="0.3375" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3375" />
         <entry key="..\:/Users/joaoc/AndroidStudioProjects/InstitutoBlindarAndroid/app/src/main/res/font/poppins_regular.xml" value="0.37083333333333335" />
         <entry key="..\:/Users/joaoc/AndroidStudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/joaoc/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/bg_bottomll.xml" value="0.32666666666666666" />

@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        tools:context=".ui.fragment.main.formsandvideos.forms.FormsFrag2">
+        tools:context=".ui.fragment.main.formsandvideos.videos.VideosFrag">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/formsRv"
+                android:id="@+id/videosRv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="true"
