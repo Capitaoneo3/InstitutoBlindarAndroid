@@ -3,17 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/badge_background.xml" value="0.24537037037037038" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/bg_intro1_bottom.xml" value="0.3536458333333333" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/button_rounded_filled.xml" value="0.3536458333333333" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/circle.xml" value="0.262037037037037" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/ic__807121_document_docx_extension_file_icon.xml" value="0.3482051282051282" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.24537037037037038" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/ic_baseline_notifications_none_24.xml" value="0.24537037037037038" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.24537037037037038" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/drawable/item_tint_color_nav_bar.xml" value="0.24537037037037038" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/activity_main.xml" value="0.2758152173913043" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/activity_video_full_screen.xml" value="0.1983695652173913" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_files.xml" value="0.17777777777777778" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_forms.xml" value="0.286231884057971" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_message.xml" value="0.17777777777777778" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_ultimos_5_chamados.xml" value="0.6566666666666666" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/adapter_videos.xml" value="0.5" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/audios_fragment.xml" value="0.3375" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/custom_action_item_layout.xml" value="0.16574074074074074" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/dialog_audio_preview_detail.xml" value="0.1641337386018237" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/dialog_video_detail.xml" value="0.33" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/forms_and_videos_fragment.xml" value="0.1641337386018237" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/forms_fragment.xml" value="0.286231884057971" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/fragment_container_intro.xml" value="0.32608695652173914" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/fragment_intro1.xml" value="0.32608695652173914" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/fragment_login.xml" value="0.3375" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/fragment_main_menu.xml" value="0.3375" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/fragment_my_calls.xml" value="0.286231884057971" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/in_progress_call_fragment.xml" value="0.11574074074074074" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/loading.xml" value="0.10555555555555556" />
+        <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/sending_audio_fragment.xml" value="0.5" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/layout/videos_fragment.xml" value="0.286231884057971" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/actionbar_menu_item.xml" value="0.3375" />
         <entry key="..\:/StudioProjects/InstitutoBlindarAndroid/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3375" />
